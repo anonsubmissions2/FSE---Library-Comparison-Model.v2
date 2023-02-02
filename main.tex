@@ -1,0 +1,401 @@
+\documentclass[sigconf,review,anonymous, table]{acmart}
+%\documentclass[sigconf,anonymous, table]{acmart}
+%\documentclass[manuscript,screen, table]{acmart}
+\usepackage{paralist}
+\usepackage{enumitem,kantlipsum}
+\usepackage{pgf-pie}
+\usepackage{tikz}
+\usepackage[most]{tcolorbox}
+\usepackage{etoolbox}
+\usepackage{fp}
+\usepackage{subcaption}
+\usepackage{mwe}
+\usepackage{xspace}
+\usepackage{eurosym}
+\usepackage{mdframed,ifthen}
+\usepackage{array}
+\tcbuselibrary{listings,breakable}
+\usepackage{placeins,newfloat}
+
+\def\bf{\textbf}
+\def\eq {Equation~}
+\def\eqm {Eq~}
+\def\eqs {Equations~}
+\def\fig {Figure~}
+\def\figs {Figures~}
+\def\tbl {Table~}
+\def\tbls {Tables~}
+\def\ie{\textit{i.e.,}}
+\def\eg{\textit{e.g.,}}
+\def\sec {Section~}
+\def\secs {Sections~}
+\def\alg {Algorithm~}
+\def\algs {Algorithms~}
+\def\app {Appendix~}
+\def\it{\textit}
+\def\tr{\textrm}
+\def\tt{\mct}
+%\newcommand{\ib}[1]{{\textbf {\textit { #1}}}}
+%\newcommand{\ts}[1]{{\textsc {{ #1}}}}
+\newcommand{\mct}[1]{{\footnotesize {\texttt {#1}}}}
+
+\newcommand{\qu}[1]{{\it{``#1''}}}
+\newcommand{\api}[1]{{\sf{\texttt\small{#1}}}}
+\newcommand{\callout}[1]{{\vspace{1mm}\noindent{\fbox{\parbox{0.97\columnwidth}{#1}}}\vspace{1mm}}}
+\usepackage{paralist}
+\usepackage{hyperref}
+\usepackage{soul}
+
+
+%% We use a different version in the main paper and in appendix!
+\DeclareFloatingEnvironment[fileext=frm,placement={!ht},name=Frame]{nonIncrementingFloat}
+\newenvironment{practice}[2]
+    {
+        \begin{center}
+        \begin{nonIncrementingFloat}
+        \begin{tcolorbox}[width=.48\textwidth, skin=enhanced jigsaw, breakable, arc=0pt, title={\textbf{Guiding Principle #1: #2}}]}
+    {\end{tcolorbox}\end{nonIncrementingFloat}\end{center}
+    }
+
+
+\normalsize
+\let\labelindent\relax
+\usepackage{enumitem}
+
+\newcommand{\nd}{\vspace{1mm}\noindent}
+\usepackage{caption}
+%\usepackage[toc,page]{appendix}
+\usepackage{tikz}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=1pt] (char) {#1};}}
+
+ \lstset{
+         language=Java,
+         basicstyle=\scriptsize\ttfamily, % Standardschrift
+         %numbers=left,               % Ort der Zeilennummern
+         numberstyle=\tiny,          % Stil der Zeilennummern
+         %stepnumber=2,               % Abstand zwischen den Zeilennummern
+         numbersep=5pt,              % Abstand der Nummern zum Text
+         tabsize=2,                  % Groesse von Tabs
+        % extendedchars=true,         %
+         breaklines=true,            % Zeilen werden Umgebrochen
+%         keywordstyle=\color{black},
+ %   	 frame=single,
+ %        keywordstyle=[1]\textbf,    % Stil der Keywords
+ %        keywordstyle=[2]\textbf,    %
+ %        keywordstyle=[3]\textbf,    %
+ %        keywordstyle=[4]\textbf,   \sqrt{\sqrt{}} %
+         stringstyle=\color{white}\ttfamily, % Farbe der String
+         showspaces=false,           % Leerzeichen anzeigen ?
+         showtabs=false,             % Tabs anzeigen ?
+         xleftmargin=17pt,
+         framexleftmargin=17pt,
+         framexrightmargin=5pt,
+         framexbottommargin=4pt,
+         %backgroundcolor=\color{lightgray},
+         showstringspaces=false,      % Leerzeichen in Strings anzeigen ?
+     %    escapeinside={\%*}{*)}
+ }
+\usepackage{rotating}
+\usepackage{pdflscape}
+\lstdefinestyle{inlinecode}{basicstyle={\ttfamily\scriptsize\bfseries}}
+%\newcommand\code{\lstinline[style=inlinecode]}
+%\newcommand{\urls}[1]{{\scriptsize\url{#1}}}
+\usepackage{tcolorbox}
+\newcommand{\emt}[1]{\emph{``#1''}}
+\usepackage{paralist}
+\usepackage[outercaption]{sidecap}    
+%\usepackage{unicode-math}
+\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+\usepackage{pifont}% http://ctan.org/pkg/pifont
+\newcommand{\cmark}{\ding{51}}%
+\newcommand{\xmark}{\ding{55}}%
+
+\newcommand{\dc}[1]{\href{https://devrant.com/rants/#1/}{$R_{#1}$}}
+
+\usepackage{enumitem}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+\newtcolorbox
+{mybox}[2][]{colbacktitle=red!10!white,
+colback=blue!10!white,coltitle=black!70!black,
+title={#2},fonttitle=\bfseries,#1}
+
+\usepackage{xcolor}
+\definecolor{ao(english)}{rgb}{0.0, 0.5, 0.0}
+\newcommand{\mybars}[3]{
+  {\color{red}\rule{#1pt}{6pt}}
+  {\color{yellow}\rule{#2pt}{6pt}}
+  {\color{ao(english)}\rule{#3pt}{6pt}}
+}
+\newcommand{\mybarsbwv}[3]{
+  {#1\%\color{black!90}\rule{#1pt}{6pt}}
+  {#2\%\color{black!50}\rule{#2pt}{6pt}}
+  {#3\%\color{black!20}\rule{#3pt}{6pt}}
+}
+\newcommand{\mybarsbw}[3]{
+  {\color{black!90}\rule{#1pt}{6pt}}
+  {\color{black!50}\rule{#2pt}{6pt}}
+  {\color{black!20}\rule{#3pt}{6pt}}
+}
+\newcommand{\mybarsbwa}[3]{
+  {#1\%Negative~\color{black!90}\rule{#1pt}{6pt}}\\
+  {#2\%Neutral~\color{black!50}\rule{#2pt}{6pt}}\\
+  {#3\%Positive~\color{black!20}\rule{#3pt}{6pt}}
+}
+
+%\newcommand{\rev}[1]{\textcolor{blue}{ #1}}
+\newcommand{\rev}[1]{#1}
+\newcommand{\newrev}[1]{\textcolor{blue}{ #1}}
+\newcommand{\as}[1]{{\textcolor{magenta}{\sf{\texttt\small{#1}}}}}
+
+\newcommand{\code}[1]{{\fontfamily{lmdh}\selectfont{\small\textsl{#1}}\normalfont}} 
+\newcommand{\ab}[1]{{\color{red}{Ann: #1}}}
+\newcommand{\numInterviews}{24\xspace}
+\newcommand{\todo}[1]{{\color{red}{\textbf{#1}}}}
+
+ %% Ann: I hate the way \qw looks so I've replaced \qw with this new command, \qqw. If the consensus is to return to the look of \qw, this command can be redefined.
+ \newcommand{\qqw}[2]{{{\fontfamily{lmdh}\selectfont{\small\textsl{#2}}\normalfont}} (#1)\xspace} %% Usage: \qqw{F}{stability}
+ \newcommand{\qww}[1]{(#1)\xspace} %% Usage: \qww{F}
+
+
+
+\newcommand{\gias}[1]{\textcolor{red}{{[Gias: #1]}}}
+
+% Used to format quotations. Usage:
+% Attributed quote: \quotebox{P4}{That's annoying.}
+% Unattributed quote: \quotebox{}{I've heard the comment.}
+\newenvironment{smallquote}%
+{\list{}{\leftmargin=0.15in\rightmargin=0.15in}\item[]}%
+  {\endlist}
+\newcommand{\quotebox}[2]{\begin{smallquote}\textit{``#2''}\ifthenelse{\equal{#1}{}}{}{ \mbox{-}~#1}\end{smallquote}}
+
+\newenvironment{observation}[2]{
+        \begin{mdframed}[
+                frametitle={\colorbox{white}{\space #1}},
+                innertopmargin=0pt,
+                frametitleaboveskip=-\ht\strutbox,
+                frametitlealignment=\raggedright,
+                nobreak=true,
+                skipabove=10pt,
+                skipbelow=10pt,
+        ]%
+        \label{#2}}{\end{mdframed}}
+
+
+
+\newcounter{recommendation}[section]
+\renewcommand{\therecommendation}{\arabic{recommendation}}
+
+\newenvironment{recommendation}[1]{
+        %\refstepcounter{observation}
+        \addtocounter{recommendation}{1}
+        \begin{mdframed}[
+                frametitle={\colorbox{white}{\space Recommendation \therecommendation\space}},
+                innertopmargin=0pt,
+                frametitleaboveskip=-\ht\strutbox,
+                frametitlealignment=\raggedright,
+                nobreak=true,
+                skipabove=10pt,
+                skipbelow=10pt,
+        ]%
+        \label{#1}}{\end{mdframed}}
+
+
+\input{utils}
+\AtBeginDocument{%
+  \providecommand\BibTeX{{%
+    \normalfont B\kern-0.5em{\scshape i\kern-0.25em b}\kern-0.8em\TeX}}}
+
+\setcopyright{acmcopyright}
+\copyrightyear{2023}
+\acmYear{2023}
+\acmDOI{XXXXXXX.XXXXXXX}
+
+%% These commands are for a PROCEEDINGS abstract or paper.
+\acmConference[ESEC/FSE 2023]{The 31st ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering}{11 - 17 November, 2023}{San Francisco, USA}
+
+%
+%  Uncomment \acmBooktitle if th title of the proceedings is different
+%  from ``Proceedings of ...''!
+%
+%\acmBooktitle{Woodstock '18: ACM Symposium on Neural Gaze Detection,
+%  June 03--05, 2018, Woodstock, NY} 
+\acmPrice{15.00}
+\acmISBN{978-1-4503-XXXX-X/18/06}
+
+\begin{document}
+
+% \title{Guiding Principles for the Software Library Adoption Lifecycle: Perspectives from Industry}
+
+%\title{A Model of Software Library Adoption in the Industry}
+\title{Software Library Adoption Process and Principles in the Industry}
+
+%\title{Promises and Perils of the Software Library Adoption Life Cycle}
+%\title{Processes and Principles Guiding Software Library Adoption in the Industry: Perspectives from Industrial Developers}
+%\title{The Life Cycle and Principles of Software Library Adoption: Perspectives from Industrial Developers}
+
+%\title{How Industrial Developers Compare \& Adopt Software Libraries}
+%\title{To Buy or Not to Buy: How Developers Buy Third Party Libraries}
+%\title{Third Party Libraries: Reusable Wheel that Requires Continuous Tire Pressure Monitoring}
+%\title{Choosing Third Party Libraries: A Common Necessity with Maintenance Baggage}
+%\title{Choosing Third Party Libraries: A Vehicle with Risk of Brake Failure}
+
+\author{Minaoar Tanzil}
+%\authornote{Both authors contributed equally to this research.}
+\email{minaoar.tanzil@ucalgary.ca}
+%\orcid{1234-5678-9012}
+\author{Gias Uddin}
+%\authornotemark[1]
+\email{gias.uddin@ucalgary.ca}
+\author{Ann Barcomb}
+%\authornotemark[1]
+\email{ann.barcomb@ucalgary.ca}
+\affiliation{%
+  \institution{University of Calgary}
+  \streetaddress{P.O. Box 1212}
+  \city{Calgary}
+  \state{Alberta}
+  \country{Canada}
+  \postcode{T2N 1N4}
+}
+
+
+%%
+%% By default, the full list of authors will be used in the page
+%% headers. Often, this list is too long, and will overlap
+%% other information printed in the page headers. This command allows
+%% the author to define a more concise list
+%% of authors' names for this purpose.
+\renewcommand{\shortauthors}{Tanzil et al.}
+
+%%
+%% The abstract is a short summary of the work to be presented in the
+%% article.
+\begin{abstract}
+Modern day rapid software development is often facilitated by the reuse of third-party software libraries. Software library adoption includes the selection as well as the maintenance of a library. Various factors and conditions may influence the adoption of a software library in a company. However, while literature offers insights on what factors could influence the selection of library, we are not aware of any study that offered insights into the overall process and principles that companies follow to adopt a software library. In this paper, our research explores how the conditions and factors of the environment influence developer decisions in library selection and maintenance. Using Straussian grounded theory, we conducted \numInterviews semi-structured interviews. The result is a theoretical framework of a library adoption model, six guiding principles of library adoption, and six recommendations for developers and organizations. Our work lays the groundwork for the development of a comparative library analysis tool to enable efficient decisions about libraries.
+%consisting of 5 steps, 5 major information sources, 53 selection factors and conditions and 6 overarching guiding principles. The library adoption model can be used for the development of a comparative library analysis tool to enable faster and more accurate decisions among developers.
+\end{abstract}
+
+%%
+%% The code below is generated by the tool at http://dl.acm.org/ccs.cfm.
+%% Please copy and paste the code instead of the example below.
+%%
+\begin{CCSXML}
+<ccs2012>
+   <concept>
+       <concept_id>10011007.10011006.10011072</concept_id>
+       <concept_desc>Software and its engineering~Software libraries and repositories</concept_desc>
+       <concept_significance>500</concept_significance>
+       </concept>
+   <concept>
+       <concept_id>10003120.10003130.10011762</concept_id>
+       <concept_desc>Human-centered computing~Empirical studies in collaborative and social computing</concept_desc>
+       <concept_significance>300</concept_significance>
+       </concept>
+ </ccs2012>
+\end{CCSXML}
+
+\ccsdesc[500]{Software and its engineering~Software libraries and repositories}
+\ccsdesc[300]{Human-centered computing~Empirical studies in collaborative and social computing}
+
+%%
+%% Keywords. The author(s) should pick words that accurately describe
+%% the work being presented. Separate the keywords with commas.
+\keywords{third-party, software library, adoption process, guiding principle}
+%%
+%% This command processes the author and affiliation and title
+%% information and builds the first part of the formatted document.
+\maketitle
+\balance
+\section{Introduction}
+In 2011, Marc Andersson famously noted that \textit{"Software is eating the world"} \cite{website:eat-world}. Indeed, software has now become the enabler of almost every tasks we do or services we offer/consume. With growing demands of tools and techniques, software companies seek to build and deploy their products quickly and efficiently. Modern day rapid software development is often facilitated by the reuse of third-party software libraries or APIs (Application Programming Interfaces). The libraries can be open-source or proprietary. Nevertheless, software/IT companies benefit from the adoption of third-party software libraries and often prefer the reuse of a library over the of re-implementation of a feature from scratch~\cite{uddin2017opiner}. For example, according to a 2017 report by the European Commission, the use of open source software saves European companies approximately \euro456 billion per year through increased productivity, efficiency, and direct cost savings \cite{eu2017economic}. These advantages come from standardization and reductions in vulnerability, development time, and expertise. However, such benefits do not always accrue; Spinellis outlines many potential concerns of relying on an open source library, among them: the project might not be maintained, the code may not be of high quality, the license may not allow the desired use, and the documentation may be poor \cite{spinellis2019select}.
+
+The process of selecting a library is not simple, as it requires balancing a number of considerations, both those inherent to the library itself and those relating to the context in which it will be used. Developers or the deciding team in a company must ask questions like whether the library will accommodate the company's expansion plans and what the full legal implications are of using the library (including potentially hidden obligations) 
+\cite{spinellis2019select,wolter:2022:open}. Factors such as the fit between functional capability of available software and the acceptance (or rejection) of the technology by peers may also influence the selection decision \cite{dishaw1998supporting,eckhardt2009influences}. % Dishaw: Fit is the matching of the capabilities of the tech- nology to the demands of the task.
+
+While open source software represents a large proportion of the external libraries employed, companies also routinely use proprietary libraries, some of which may be part of a long supply chain which also involves open source software \cite{harutyunyan:2018:understanding}. All of the considerations of open source software still apply: the company needs to consider if the library will continue to be developed, is a good fit for the task, and so on. Further, while the code for open source libraries is freely available, there may still be financial considerations such as switching costs, support, and access to extended (proprietary) features \cite{dahlander2006business}. Therefore, while certain factors may be of greater or lesser importance to a company when evaluating a particular library, the possible considerations are not substantially different for proprietary and open source libraries. 
+
+Indeed, it is crucial to pick the right software library in a large-scale software system, given that the replacement of a library because a new library can induce breaking changes into the system that take significant time to address. At the same time, the adoption of a new software library can be a time consuming and resource intensive process in a large software company, e.g., legal team needs to check for compatible licenses, product team needs to determine the best candidate out of the available libraries, etc. It is thus important to understand the decision making processes software companies follow to select and adopt a new software library and the factors and principles they consider during the process. 
+
+The selection factors of software libraries have been the subject of several studies. In particular, technical criteria related to the selection of open source tools are studied and cataloged extensively \cite{wasserman2017osspal, li2022exploring, larios2020selecting, huang2018tell, wang2020difftech, wang2021difftech, uddin2017automatic, uddin2017opiner, de2018library, de2018empirical, el2020libcomp, yan2022concept, liu2021api, uddin2019understanding, larios2020selecting}. However, the adoption of a software library in industry can involve both the selection and the subsequent maintenance of the library. As such, software library adoption in the industry is a multi-faceted process that can encapsulate an end-to-end process, where a given step can be influenced by diverse factors and principles.  A holistic understanding of the adoption process is missing in the literature. 
+
+In this paper, we conducted 24 semi-structured interviews of industrial developers to understand the adoption process of third-party software in a company. The outcome is a theoretical framework of software library adoption model that consists of a catalog of steps, conditions, factors, and principles related to software library adoption in the industry. By conditions, we mean environmental characteristics which are independent of the library under consideration. By contrast, by factors we mean characteristics of the library itself. We answer three research questions to describe our derived software library adoption model (RQ).
+
+\nd\bf{RQ1: What are the major steps developers follow in the industry during their adoption of a software library?} We found that developers go through five iterative steps of search, compare, review, integrate and maintain for library adoption. \fig\ref{fig:adoption-process} shows how the five steps can support the selection and adoption process of software libraries. During this process, software developers/teams collect library related information from five major information sources (e.g. online forums, colleagues, etc.). To the best of our knowledge, ours is the first study that presents an end-to-end adoption process like \fig\ref{fig:adoption-process} (explained further in \sec\ref{sec:phases}).
+%\minaoar{should we also note that this adoption process is first in literature for software libraries? For RQ2 and RQ3, we compared with existing literature.}
+\begin{figure}[h]
+    \centering
+    \includegraphics[scale=.6]{images/adoption-process.pdf}
+    \caption{Software library adoption process}
+    \label{fig:adoption-process}
+\end{figure}
+% As we understand the adoption lifecyle, we realized that there are several conditions and factors that can influence the adoption lifecyle. We thus sought to answer the following research question.
+
+\nd\bf{RQ2: What conditions and technical factors influence the library adoption process?}
+We found that developers have to consider 23 types of conditions (e.g., environmental, organizational, etc.) and 28 types of factors (e.g., technical, commercial)  during the library adoption process. While 22 of these conditions and factors are previously reported in the literature  (e.g., popularity), 29 others were observed the first time in our study (e.g., benchmarking).
+% As developers follow the adoption process and consider the influential conditions and factors, we found that their final decisions on whether and how to adopt a library can be encoded into several guiding principles. As such, we sought to answer the final research question as follows. 
+
+\nd\textbf{RQ3: What guiding principles do developers follow during the library adoption process?} We found that developers follow 6 guiding principles (e.g., maximize flexibility during adoption) to achieve the optimum benefits from libraries and manage the burdens associated with those libraries. To the best of our knowledge, ours is the first study that reports and catalogs the principles that could guide the adoption of software libraries.
+
+Based on the derived library adoption model, we offer six recommendations that software companies and developers can follow to guide their library adoption process. 
+
+% To address this gap in the literature, we tried to discover the end to end library adoption life cycle so that we could not only understand how developers select and maintain libraries, but also realize their core motivations that guides developer throughout their library adoption journey. In this study, we considered the process through the lens of consumer buyer behavior, where the product-specific factors determine what the consumer will select, in the context of consumer-specific concerns, or `influences' \cite{kotler2014principles}. By using this approach, we have sought to explain the complexity of the adoption of software libraries, a decision which has often been considered as primarily driven by technical considerations. Our work was driven by the following questions:
+% % In order to better understand the complete process by which library selection decisions are made, we posed the following questions:
+% \begin{itemize}
+% \item \textbf{RQ1}: What are the major steps developers follow during their adoption of a software library?
+% \item \textbf{RQ2}: What conditions and technical factors influence the library adoption process?
+% \item \textbf{RQ3}: What guiding principles do developers follow in library adoption?
+% \end{itemize}
+
+
+% \textbf{Summary of Contribution} 
+% Novel contribution: \newline
+% A. Library Adoption Life Cycle \newline
+% B. Library Adoption Guiding Principles
+% \todo{@Someone - spell out the contributions. Then make sure that they are reflected in the abstract.}
+% \@todo{Culminating in X recommendations for industry}
+
+\nd\bf{Replication Package \cite{website:replication-package}} contains anonymized transcribed interviews, study protocol, codebook and scripts for the results.
+% Our replication package contains the interview script, invitation emails, consent form, REB approval, final codebook, assessment of grounded theory evaluation criteria, and an Appendix \cite{website:replication-package}. In order to preserve the anonymity of our participants and to adhere to our ethics approval, we do not share a list of interview participants or the interview transcripts. 
+
+
+
+% The rest of this paper is organized as follows. First, we put the research in the context of related work. Next, we explain the methodology and the results. This is followed by a discussion and a consideration of the limitations of the research. Finally, we summarize the key findings.
+
+
+
+\input{B.related-works.tex}
+\input{C.methodology.tex}
+\input{D.Framework.tex}
+
+\input{E.results.tex}
+\input{F.discussion.tex}
+\input{G.conclusion.tex}
+
+
+
+
+%%
+%% The acknowledgments section is defined using the "acks" environment
+%% (and NOT an unnumbered section). This ensures the proper
+%% identification of the section in the article metadata, and the
+%% consistent spelling of the heading.
+\begin{acks}
+\end{acks}
+
+%%
+%% The next two lines define the bibliography style to be used, and
+%% the bibliography file.
+\bibliographystyle{ACM-Reference-Format}
+\bibliography{references}
+
+%%
+%% If your work has an appendix, this is the place to put it.
+%\appendix
+%\input{z_extra_materials.tex}
+\end{document}

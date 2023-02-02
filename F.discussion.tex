@@ -1,0 +1,71 @@
+
+\section{Discussion}
+
+\subsection{Recommendations}
+
+We have observed that even before being able to integrate a library, there are certain conditions (C) in an organization or a developer which may prevent them from considering a library at all. Obstacles can be caused by organizational policy, technology, or even by the developer's mindset and experience. In some cases, a lack of supportive process, such as an OSPO, or restricted internet access meant that developers lacked clarity about which libraries could be used. 
+\begin{recommendation}{rec:ospo}
+  {Organizations should formalize third-party library policy, and create streamlined, proportional processes to support it.}
+\end{recommendation}\medskip
+
+For developers and organizations the use of libraries not only brings benefits, it also brings disadvantages which must be considered. Participants noted that often developers can focus on solving imminent problems in hand and have a blind spot on the future maintenance of a library. However, as we have observed, library maintenance is a major part of the adoption life cycle (L) and developers should be well aware of the \code{post integration maintenance} period. 
+\begin{recommendation}{rec:maintenance}
+  {Developers not only need to consider the maintenance related concerns while reviewing a library, they also need to deploy a strategy to continually maintain or upgrade libraries. The strategy may involve developing organizational policy, or even allocating certain resources for future maintenance.}
+\end{recommendation}\medskip
+
+Though we presented the conditions of each guiding principle separately, in reality, developers may have multiple types of conditions with conflicting guiding principles. For example, in a matured organization with large scale application, a team may face urgent production issue in a critical feature that may prompt 'Just Do It' principle immediately, however, they will need to adopt 'Reuse Robust Component' once the urgency is taken care of. %The long-term maintainability of a library is not always a consideration in all situations. While it is critical in the guiding principle (GP) ``Ensure Compliance,'' it is of little interest under the conditions where ``Just Do It'' is applicable. 
+\begin{recommendation}{rec:gp}
+%Developers should identify the appropriate guiding principle or principles before they can begin the library adoption steps.
+Developers may need to balance among multiple guiding principles when faced with complicated and conflicting conditions. 
+\end{recommendation}\medskip
+
+ Several factors (F) should be considered in library selection. Of these, some are particularly critical. Marketing theories consider cut-off factors as those factors of product whose absence will bar the consumer from buying it \cite{blackwell2001consumer}. From our study, we also realized that there are four factors in library selection that developers treated as cut-off factors which are \code{capability of the library}, \code{compatibility}, \code{security}, and \code{license}. 
+ \begin{recommendation}{rec:cutoff}
+Organizations should strongly consider \code{security} and \code{license} issues, irrespective of \code{organizational} or \code{environmental} conditions.
+\end{recommendation}\medskip
+
+
+Developers seek information from a variety of sources (S), some external, and some from within the organization. If the organization does not have a very welcoming inclusive culture, critical analysis of libraries can be ultimately influenced and driven by outspoken people. We have heard from the interviewees about the necessity of inclusive culture where they assumed that the inclusivity should prevail in a software development team from the beginning of the recruitment process up to the development team's regular discussion. However, it was also evident that even in larger well managed organizations, such inclusivity may remain very subtle and may not be able to promote a democratic decision throughout the library selection process. It would be the responsibility of the team leader so subside outspoken vocal members and let other members to communicate their ideas in whatever preferred (verbal, written) way possible.
+ \begin{recommendation}{rec:inclusivity}
+Organizations should cultivate openness and encourage inclusivity irrespective of individual's communication preference. 
+\end{recommendation}\medskip
+
+ Even when the culture promotes openness, development teams often have few enthusiastic developers who love to explore and whose opinions might have a disproportionate weight on discussions. Teams are better when all members will develop a habit of regular studies and in the long run they will be able to adapt much better with technological changes as well as make decisions about third party tools or libraries in general. We found from the participants that enthusiastic early career developers often care about getting things done and frequently wants to try out new libraries for richness of their career (or resume). However, raising the concern of the lifelong maintenance of third party libraries, interviewees recommended to avoid libraries when it is not absolutely necessary. 
+  \begin{recommendation}{rec:hackathon}
+To promote the culture of technical exploration and discussion, a team can decide to go for weekly studies and form a study circle where every developer will present something new that they learnt, or implement yearly hackathons where developers can experiment with new technologies without jeopardising the production system. 
+\end{recommendation}
+
+
+\subsection{Implications} 
+
+Our research presents the software library adoption life cycle for the first time, along with a detailed description of conditions, factors, and information sources affecting the adoption process. Unlike earlier work, which found 26 human and technical factors associated with adoption \cite{larios2020selecting}, we used a marketing lens to divide aspects of the selection process into different categories. This enabled us to identify guiding principles, or practices, which can be readily applied by industry. We supplement these with recommendations drawn from the interviews on how industry can more effectively use third-party libraries. \todo{@Ann - work in more contrast with other lit}
+
+%As part of the adoption life cycle, we have presented 5 major steps of library adoption life cycle, identified 28 library selection factors, 14 library related source of information, and 23 internal external conditions that influence the life cycle. No other previous study provided the life cycle steps for libraries. Larios-Vargas et. \cite{larios2020selecting} identified 26 factors influence library selection under technical, human resource, and economical factors. Their proposed human resource and economical factors are fully mapped by our conditions category and technical factors are covered by our library selection factors. We identified 14 new conditions (such as \code{company}, \code{application domain}, \code{investment capacity}, \code{Expert/lead opinion}, \code{upgrades of OS}, \code{criticality of feature}, \code{delivery deadline}) beyond their human and economic factors. Moreover, our study also found 15 additional software selection factors (such as \code{ease of installation}, \code{flexibility}, \code{availability of demo}, \code{familiarity}, \code{used by reputed company}) which their study did not report. Besides, the factors, Li et. al outlined 14 sources for collecting information about open source software (not library) \cite{li2022exploring}. All of their reported sources are covered by our 6 information sources (\code{Package repository}, \code{Source repository}, \code{Stack Overflow}, \code{Other Q\&A sites}, \code{Online Article}, \code{Influential Blog}) and 8 of our sources are novel (such as \code{known people}, \code{search engine}, \code{existing source code}) for library information.}
+
+\minaoar{Todo: please review if the comparison with marketing models would be needed or not.}
+\minaoar{In progress.} Our library adoption model also found to be closely similar to consumer and business buyer models of marketing theories \cite{kotler2014principles}. Consumer behavior model proposes need recognition, information search, alternative evaluation, purchase decision, and postpurchase behavior which is fully similar with library adoption process except that we have split the purchase decision to \code{review} (where mostly decision is taken) and \code{integrate} steps. However, the library adoption conditions match with business/organization buyer behavior conditions as it involves intensive peer influences compared to consumer behavior.   
+
+The use of the marketing lens suggests future work in extending the Fishbein Multiattribute Model \cite{fishbein1967attitude} to library selection, potentially melding this area of research with the work which has already been done to identify processes for library selection (described in Section~\ref{sec:lit:processes}). Furthermore, our work offers the potential of creating a tool to support developer decisions which truely considers all important aspects of the selection process. In our later interviews, we presented developers with a mock-up of such a tool, the development of which is part of ongoing research.
+
+
+
+
+\subsection{Quality and Applicability of the Study}
+Corbin and Strauss did not recommend using the terms `validity and reliability' when discussing qualitative search \cite{corbin2014gt}, because qualitative methodologies cannot be assessed using quantitative criteria. They defined 17 measures researchers can use to evaluate the quality and applicability of their grounded theory research. We present the complete evaluation as part of our replication package \cite{website:replication-package}, here we present five major evaluation criteria.
+
+\subsubsection{Industry Fitness}
+This criterion concerns industry credibility. We conducted member checking \cite{creswell2016qualitative} by presenting a ten page summary of our findings, which was sent to 18 of our interviewees who agreed to further contact. This communication included a link to a survey which asked their opinion as to whether the summary reflected their experience and was useful to them. Thirteen participants completed the survey, all of whom opined that the summary was accurate. Five provided additional feedback on the utility of the findings:
+\qi{I think the summary captures different aspects of library selection process very well. It outlines a generic, industry-wide pattern with enough details, and also provides exceptional factors that impact that pattern.}{}
+
+\subsubsection{Industrial Application} Industrial application answers the question of whether the findings provide insight into situations and provide knowledge which can be applied to develop policy, change practice, and add to the knowledge base of a profession \cite{corbin2014gt}. This criterion was also evaluated through member checking. One participant shared their feedback, demonstrating that they found our work applicable: \qi{One interesting thing that I learned from your research is, different developers have different processes and priorities for picking a library, and not everybody is considering all the steps that need to be taken, so I would recommend your paper to all developers to just widen their horizons.}{}
+
+\subsubsection{Usefulness} To address this measure, we looked at if there are suggestions for practice, policy, teaching, and application \cite{corbin2014gt}. To the best of our knowledge, this is the first study to provide a comprehensive picture of library adoption. The presentation of guiding principles in the form of patterns, which are widely used in industry, makes the results more accessible to practitioners. Participants also appreciated the suggestions:
+\qi{My favorite part of the summary is the takeaway action items that I believe would be useful in building a better culture for adopting the right tools and technologies.}{}
+
+\subsubsection{Explainability of Theory} The way to assess this measure is to determine if variation is built into the theory \cite{corbin2014gt}. Our conceptual framework is based on six guiding principles which depend on different contexts and lead to different implications for the influence of conditions, factors, and use of information sources. This allows the theory to support a wide variety of circumstances.
+
+\subsubsection{Saturation of Categories} ``How is saturation explained, and when and how was it determined that categories were saturated?'' is the criterion for evaluating this measure \cite{corbin2014gt}. We provided detailed information about how we performed theoretical sampling to achieve saturation, and described how the major categories achieved saturation throughout the progression of the study. The Appendix contains a heatmap of concept saturation which shows the progression of topics across interviews.
+
+
+
+

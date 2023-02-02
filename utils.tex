@@ -1,0 +1,80 @@
+\def\nonzero#1#2{%
+    \ifnum #1 > 0
+      #1#2
+    \fi
+}
+
+
+% \newcommand{\horizontalbars}[4]{
+% {{\color{black}\rule{#1pt}{4pt}}  \nonzero{#1}{C}}
+% {{\color{black!50}\rule{#2pt}{4pt}}  \nonzero{#2}{F}}
+% {{\color{black!20}\rule{#3pt}{4pt}}  \nonzero{#3}{P}}
+% {{\color{black!40}\rule{#4pt}{4pt}} \nonzero{#4}{S}}
+
+% }
+
+% \newcommand{\horizontalbars}[5]{
+% {{\color{black}\rule{#1pt}{4pt}}  \nonzero{#1}{NA}}
+% {{\color{red}\rule{#2pt}{4pt}}  \nonzero{#2}{AS}}
+% {{\color{green}\rule{#3pt}{4pt}}  \nonzero{#3}{EU}}
+% {{\color{blue}\rule{#4pt}{4pt}} \nonzero{#4}{AU}}
+% {{\color{black!50}\rule{#5pt}{4pt}} \nonzero{#5}{SA}}
+% }
+
+
+\newcommand{\horizontalbars}[5]{
+{{\color{black}\rule{\fpeval{5*(#1)}pt}{4pt}}\nonzero{#1}{}}{{\color{red}\rule{\fpeval{5*(#2)}pt}{4pt}}\nonzero{#2}{}}{{\color{green}\rule{\fpeval{5*(#3)}pt}{4pt}}\nonzero{#3}{}}{{\color{blue}\rule{\fpeval{5*(#4)}pt}{4pt}}\nonzero{#4}{}}{{\color{black!50}\rule{\fpeval{5*(#5)}pt}{4pt}}\nonzero{#5}{}}
+}
+
+%\newcommand{\mybarsbwa}[4]{}
+% \\   {C\color{black!90}\rule{#1pt}{6pt}}#1 {P\color{black!70}\rule{#2pt}{6pt}}#2 {F\color{black!40}\rule{#3pt}{6pt}}#3 {S\color{black!20}\rule{#4pt}{6pt}}#4
+% }
+
+
+%\newcommand{\qq}[2]{} % remove all quotes
+%\newcommand{\qq}[2]{\textit{"#1"}$_{#2}$} % inline quotes
+%\newcommand{\qi}[2]{\textit{"#1"}$_{#2}$} % inline quotes
+%\newcommand{\qq}[2]{\begin{quote}"#1"$_{#2}$\end{quote}} % stylized quotes
+
+\newcommand{\qi}[2]{\quotebox{#2}{#1}}
+\newcommand{\qq}[2]{\quotebox{#2}{#1}} 
+\newcommand{\qqi}[2]{\textit{"#1"} - {#2}} % inline quotes
+
+
+
+
+%This is an apple {\def\svgwidth{2cm}\input{name.pdf_tex}} and more text
+%https://tex.stackexchange.com/questions/374192/how-to-use-figures-as-inline-images
+%https://tex.stackexchange.com/questions/313927/tikz-picture-inline
+%https://tex.stackexchange.com/questions/7032/good-way-to-make-textcircled-numbers
+\newcommand{\qw}[2]{\textbf{#2}\tikz[baseline=(char.base)]{
+    \node[shape=circle,fill=blue!20,inner sep=.5pt] (char){#1};}}
+
+\newcommand{\tc}[0]{\textcolor{green}{ [add citation]}}
+
+% following command is used to highlight text/numbers which can be changed after all the inerview/data collection is done. 
+\newcommand{\td}[1]{\textcolor{blue}{(#1)}}
+
+\newcommand{\autourfill}[1]{\tikz[baseline=(X.base)]\node [draw=blue,fill=blue!40,semithick,rectangle,inner sep=2pt, rounded corners=3pt] (X) {#1};}
+
+\newcommand{\autouroutline}[1]{\tikz[baseline=(X.base)]\node [draw=blue,fill=white,semithick,rectangle,inner sep=2pt, rounded corners=3pt] (X) {#1};}
+
+\newcommand{\autourbox}[1]{\tikz[baseline=(X.base)]\node [draw=black!70,fill=white,semithick,rectangle,inner sep=2pt, rounded corners=3pt] (X) {#1};}
+
+\newcommand{\autourhighlight}[1]{\tikz[baseline=(X.base)]\node [draw=none,fill=red!20,semithick,rectangle,inner sep=2pt, rounded corners=3pt](X){#1};}
+
+
+
+
+\newcommand\actor[1]{\textbf{Actor:}  #1\vspace*{.5em}\\} 
+\newcommand\condition[1]{\textbf{Condition:}  #1\vspace*{.5em}\\} 
+\newcommand\concern[1]{\textbf{Concern:} #1\vspace*{.5em}\\}
+\newcommand\solution[1]{\textbf{Solution:} #1\vspace*{.5em}\\ }
+\newcommand\consideration[1]{ \textbf{Consideration:} #1 }
+\newcommand\steps[1]{\vspace*{.5em}\\\textbf{Steps:} #1}
+\newcommand\example[2]{\vspace*{.5em}\\\textbf{Example Data:} \qqi{#1}{#2}}
+
+%\newcommand{minaoar}[1]{\textcolor{blue}{Minaoar: #1}}
+
+%\newcommand\minaoar[1]{\textcolor{blue}{#1}}
+\newcommand{\minaoar}[1]{\textcolor{blue}{{[Minaoar]: #1}}}
