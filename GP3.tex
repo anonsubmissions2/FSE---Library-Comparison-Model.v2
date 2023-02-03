@@ -1,32 +1,29 @@
+%\vspace{-5mm}
 \begin{practice}{3}{Maximize Flexibility} % Was Improve Application Structure
 \actor{Developers, Architects}
-\condition{Large scale software applications can have their own structure which evolved over time and may follow some software design principles. System designers want to use new libraries in a way that improves the application structure, or at least does not deteriorate it.
-When implementing critical features, architects often plan for extendability and maintainability. A third party application can pose both a risk and advantage in this regard.}
-\concern{How can the application architecture  be improved or be protected from unwanted rigidity by using a third partly library?}
+\condition{Large scale software applications have their own structure which evolved over time and may follow some software design principles. System designers want to use new libraries in a way that improves the application structure, or at least does not deteriorate it.}
+\concern{How can the architecture be improved or be protected from unwanted rigidity while using a library?}
 \solution{Use a library that just fits right with the application in terms of the size and flexibility. Consider wrapping the third-party library in an API to allow replacement of the library without affecting dependent code.}
-\consideration{The library should be flexible and should not be too large in size compared to the required functionality.}
-\steps{Find, compare, and review libraries. In addition, conduct design review to assess impact on architecture. Review internal organizational content for design principles, and study study online articles for suggestions.}
+\consideration{The library should be flexible and should not be too large in size compared to the system.}
+\steps{Find, compare, and review libraries. Conduct design review to assess impact on architecture. Review internal organizational content for design principles.}
 \example{The moment you have to bring something in because there are new requirements is the time to assess how you've structured your application and does it still serve you and your customers or the business requirements you have. So that’s the opportunity to look at the structural aspect of the application and make sure you do want to avoid changing it or maybe
 it's the time to change it.}{P22}
-\end{practice}
+\end{practice}%\vspace{-4mm}
 
-% \begin{table}[]
+% \begin{table}[h]
 %     \centering
-%     \caption{Scenario of GP3: Improve Application Structure}
-%     \begin{tabular}{p{1cm}p{7.5cm}}
+%     %\caption{Scenario of GP3: Maximize Flexibility}
+%     \begin{tabular}{p{8.5cm}}%{p{1cm}p{7.5cm}}
 %          \toprule
-%          \textbf{GP} & \textbf{Improve Application Structure} \\ 
+%          \textbf{Guiding Principle 3 - Maximize Flexibility} \\% & \textbf{Improve Application Structure} \\ 
 %          \midrule
-%             Actor(s) & Developers, Architects \\ 
-%             Context & - Large scale software applications can have their own structure which evolved over time and may follow some software design principles. System designers would be using new libraries in a way that improve the application structure, or at least does deteriorate it.
-%             - When implementing critical features, architects often plan about extendability and maintainability. A third party application can pose both a risk and advantage in this regard. \\ 
-%             Concern & How the application architecture can be improved or can be protected from unwanted rigidity by using a third partly library? \\ 
-%             Solution & Use a library that just fits right with the application in terms of the size and flexibility. \\ 
-%             Consider-ation & The library should be flexible to existing application and should not be too heavy in size compared to the required functionality. \\ 
-%             Steps & Find, compare, and review libraries. In addition, conduct design review to assess impact on architecture. \\ 
-%             Support & Review internal organizational content for design principles, and study study online articles for suggestions. \\ 
-%             Example Trace in Data & the moment you have to bring something in because there are new requirements is the time to assess how you’ve structured your application and does it still serve you and your customers or the business requirements you have. So that’s the opportunity to look at the structural aspect of the application and make sure you do want to avoid changing it or maybe
-%             it’s the time to change it. (P22) \\ 
+%             \bf{Actor(s).} Developers, Architects \\ %\midrule 
+%             \bf{Condition.} Large scale software applications have their own structure which evolved over time and may follow some software design principles. System designers want to use new libraries in a way that improves the application structure, or at least does not deteriorate it.\\ %\midrule 
+%             \bf{Concern.} How can the architecture be improved or be protected from unwanted rigidity while using a library?\\ %\midrule 
+%             \bf{Solution.} Use a library that just fits right with the application in terms of the size and flexibility. Consider wrapping the third-party library in an API to allow replacement of the library without affecting dependent code.\\ %\midrule 
+%             \bf{Consideration}. The library should be flexible and should not be too large in size compared to the system.\\ %\midrule 
+%             \bf{Steps.} Find, compare, and review libraries. Conduct design review to assess impact on architecture. Review internal organizational content for design principles.\\ %\midrule 
+%             \bf{Example}. \emph{``The moment you have to bring something in because there are new requirements is the time to assess how you've structured your application and does it still serve you and your customers or the business requirements you have. So that’s the opportunity to look at the structural aspect of the application and make sure you do want to avoid changing it or maybe it's the time to change it."}{P22} \\ 
 
 %          \bottomrule
 %     \end{tabular}

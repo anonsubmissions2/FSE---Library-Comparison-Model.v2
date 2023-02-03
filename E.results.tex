@@ -1,5 +1,4 @@
-
-%\section{Guiding Principles and Life Cycle of Library Adoption}
+%\section{Guiding Principles and Process of Library Adoption}
 %\label{sec:taxonomy}
 %\begin{figure*}
 %    \centering
@@ -10,7 +9,7 @@
 % Using open coding and constant comparison of \td{24} interviews, we discovered total 83 library adoption concepts. By conducting axial coding, we categorized these concepts into 19 categories under 4 major categories of adoption steps, surrounding conditions, library specific factors, and information sources. Figure \ref{fig:taxonomy} shows the hierarchy of all 83 library adoption concepts. Numbers shown beside the major categories in Figure \ref{fig:taxonomy} refer to the total number of concepts under that category (e.g., 18 concepts under 'steps' category).
 
 
-\subsubsection{Steps of Library Adoption (L)}\label{sec:phases} 
+\subsubsection{Library Adoption Process (How)}\label{sec:phases} 
 
 % [Minaoar] I assumed it was deleted mistakenly and added it back.
 %% Ann: Nope, deleted on purpose. We have to tell one story well and not get bogged down in details.
@@ -21,13 +20,13 @@
 %   \label{fig:process}
 %\end{figure*}
 
-The adoption of a third-party library consists of five steps, as depicted in the `Process' section of Figure~\ref{fig:framework}. The steps are: search for library information, compare available libraries, review libraries along with other teammates or teams, integrate the library into the application, and maintain the library through the life cycle of the host application. There were 18 concepts associated with \code{steps of library adoption process} in our code system. Figure~\ref{fig:process} in the Appendix shows the relationship between relevant codes and categories.
+The adoption of a third-party library consists of five steps, as depicted in the `Process' section of Figure~\ref{fig:framework}. The steps are: search for library information, compare available libraries, review libraries along with other teammates or teams, integrate the library into the application, and maintain the library through the process of the host application. There were 18 concepts associated with \code{steps of library adoption process} in our code system. Figure~3 in the Appendix shows the relationship between relevant codes and categories.
 
 \code{Search} entails \code{identifying the problem}, \code{talking to people}, and \code{performing an online search}. Next, developers \code{compare} available libraries by \code{comparing alternatives}, \code{exploring candidates}, and \code{selecting the outstanding library}. The comparison concept is explained by P15:
 
 \qi{You go to Stack Overflow and you find some articles there that refers to some of the libraries. From there you go into those libraries spaces and GitHub and then you take a look at it.}{P15} 
 
-\code{Review} of the library can involve multiple concepts: \code{team discussion}, \code{design/code review}, \code{consent process}, \code{convince developers}, \code{convince non-developers}, and \code{stakeholder consultation}. Depending on the company size and practices, developers may request approval from dedicated teams who review the security and license issues of third party libraries: 
+\code{Review} of the library can involve multiple concepts: \code{team discussion}, \code{design/code review}, \code{consent process}, \code{convince developers}, \code{convince non-developers}, and \code{stakeholder consultation}. Depending on the company size and practices, developers may request approval from dedicated teams who review the security and license issues of third-party libraries: 
 \qi{So we have the DevOps team\ldots they have a way to check the security also any vulnerability issue altogether and also if we are actually using it in the proper license.}{P11} 
 
 
@@ -41,26 +40,31 @@ versions or you can ignore the new versions. Usually major versions might have s
 %\todo{@Minaoar - I took this quote from elsewhere, please replace it if it isn't coded under maintain} \minaoar{looks good}.
 
 
-\subsubsection{Source of Information about Libraries (S)} \label{sec:sources}
-Developers seek out information about libraries from a variety of sources when making an evaluation, as shown in Figure~\ref{fig:framework}. The main categories of information \code{source} are \code{human sources}, \code{online search and articles}, \code{question answer sites}, \code{repositories}, and \code{organizational sources} internal to the company. Within these five categories, we identified 14 concepts, whose hierarchical relationship is shown in Figure~5 of the Appendix.
+\subsubsection{Information Sources Consulted to Support the Adoption Process (Where)} \label{sec:sources}
+Developers seek out information about libraries from five categories of information sources when making an evaluation: \code{human sources}, \code{online search and articles}, \code{question answer sites}, \code{repositories}, and \code{organizational sources} internal to the company. Within these five categories, we identified 14 concepts, whose hierarchical relationship is shown in Figure~3 of the Appendix.
 
-Of the \code{human sources} available to developers, there are \code{known people}, the developer's \code{regular study}, and \code{developer meetup}. Which sources the developer favors can vary, as illustrated by these two quotes:
-\qi{The first thing is not opinion from other people, rather from developer's daily study. Developers always look for [learning] things, right?}{P01}
-\qi{The very first step before going to searching is I'm reaching out to my colleagues.}{P11}
+% Of the \code{human sources} available to developers, there are \code{known people}, the developer's \code{regular study}, and \code{developer meetup}. Which sources the developer favors can vary, as illustrated by these two quotes:
+% \qi{The first thing is not opinion from other people, rather from developer's daily study. Developers always look for [learning] things, right?}{P01}
+% \qi{The very first step before going to searching is I'm reaching out to my colleagues.}{P11}
 
-For \code{online search and articles}, developers can turn to \code{web search}, \code{online article}, \code{influential blog}, and \code{case studies}. Alternately, they may turn to \code{question and answer sites} such as \code{Stack Overflow} or \code{other Q\&A sites}. The value of question and answer sites as a source of information is described by P07:
+For \code{online search and articles}, developers can turn to \code{web search}, \code{online article}, \code{influential blog}, and \code{case studies}. Alternately, they may turn to \code{question and answer sites} such as \code{Stack Overflow} or \code{other Q\&A sites}:
 \qi{Stack Overflow is a huge resource for seeing what different people recommend\ldots and also seen a lot on things like Quora and Reddit where you say what's the best library for doing X and people will list out a couple of different options there.}{P07}
 
-Another source of information is \code{repositories}, which can consist of the \code{direct library vendor},\code{package repository}, or \code{source repository and offical website}. Finally, developers can turn to internal \code{organizational sources}, namely \code{existing source code} and \code{organizational content}. As one respondent explained,
+Another source of information is \code{repositories}, which can consist of the \code{direct library vendor},\code{package repository}, or \code{source repository and official website}. Finally, developers can turn to internal \code{organizational sources}, namely \code{existing source code} and \code{organizational content}. 
 \qi{[We have an] internal GitHub. Then there are internal search engines, also there are some question answer like Stack Overflow\code I think that is true for all these big corporations.}{P02}
 
 
-\subsection{Factors and Conditions influencing Life Cycle (RQ2)}
+\subsection{The Factors and Conditions (RQ2)}
+\begin{figure*}
+    \centering
+    \includegraphics[scale=0.8]{images/conditions.pdf}
+    \caption{Factors and conditions influencing adoption process (gray boxes are concepts that are found first time in our study)}
+    \label{fig:conditions}
+\end{figure*} \fig\ref{fig:conditions} summarizes the concepts related to conditions and factors that can influence the library adoption process. 
+% Our second research question was ``What conditions and technical factors influence the library adoption process?'' In order to answer this question, we turn to the conditions of library adoption and the factors of library selection criteria.
 
-Our second research question was ``What conditions and technical factors influence the library adoption process?'' In order to answer this question, we turn to the conditions of library adoption and the factors of library selection criteria.
-
-\subsubsection{Conditions of Library Adoption (C)}\label{sec:conditions}
-Library adoption life cycle can be influenced by environmental, organizational, team specific, individual, and technical scenario specific conditions and opinions. These conditions affect which guiding principles are most appropriate. In the major category of \code{conditions}, we identified five categories: \code{environmental}, \code{organizational}, \code{team influence}, \code{individual}, and \code{technical}, which are depicted in relation to the life cycle of adoption in Figure~\ref{fig:framework}. There were 23 concepts associated with these categories, as shown on Figure~\ref{fig:conditions} in the Appendix.
+\subsubsection{Conditions Influencing Library Adoption Process (Which)}\label{sec:conditions}
+Library adoption process can be influenced by environmental, organizational, team specific, individual, and technical scenario specific conditions and opinions. These conditions affect which guiding principles are most appropriate. In the major category of \code{conditions}, we identified five categories: \code{environmental}, \code{organizational}, \code{team influence}, \code{individual}, and \code{technical}, which are depicted in relation to the process of adoption in Figure~\ref{fig:framework}. There were 23 concepts associated with these categories, as shown on Figure~4 in the Appendix.
 
 \code{Environmental} conditions include the \code{geographic} and \code{legal} landscapes. For example, regulatory requirements influence the legal conditions under which the company operates:
 \qi{in Germany you have to report a security breach in your company\ldots you have to pay two percent of the revenue if a security breach happens and your data gets leaked.}{P17} 
@@ -78,8 +82,8 @@ Organizations can also enforce policies for library selection. Under \code{organ
 
 
 
-\subsubsection{Factors of Library Selection Criteria (F)}\label{sec:factors}
-The factors of the library itself help inform the life cycle, as depicted in Figure~\ref{fig:framework}. We identified four categories of \code{factors}: \code{software factors}, \code{commercial factors}, \code{maintenance factors}, and \code{external factors}. Under these we found 28 concepts, whose relation to the categories is shown in Figure~6 in the Appendix.
+\subsubsection{Factors Influencing Library Selection Process (What)}\label{sec:factors}
+The factors of the library itself help inform the process, as depicted in Figure~\ref{fig:framework}. We identified four categories of \code{factors}: \code{software factors}, \code{commercial factors}, \code{maintenance factors}, and \code{external factors}. Under these we found 28 concepts, whose relation to the categories is shown in Figure~4 in the Appendix.
 
 In the category of technical \code{software factors}, we see \code{compatibility}, \code{stability}, \code{flexibility}, \code{capability}, \code{security}, \code{performance}, \code{ease of use}, \code{ease of installation}, \code{size of library}, and \code{interesting interface} as concerns. Several of these considerations are provided by P15:
 \qi{We have to understand how much memory it is gonna use. How much time it takes to execute? Or how much CPU is gonna use? Is this library compatible with the development environment? How is the thread safety within the library?}{P15}
@@ -94,15 +98,17 @@ Finally, \code{external factors} can come into play. These include \code{popular
  \qi{Oftentimes what happens is that the decision or the choice gets influenced by individual's bias or familiarity or previous experience with one particular product or service}{P08} 
 
 
-\subsection{Guiding Principles (RQ3)}
+\subsection{The Guiding Principles (RQ3)}
 \label{sec:gp}
 
-All of the concepts of the library adoption life cycle described in section \ref{sec:framework} have complex interactions which are captured in the six guiding principles.  The guiding principles have all the characteristics of patterns; that is, they represent an abstract solution to a recurring problem \cite{riehle:2021:pattern}. On the basis of internal and external conditions \qww{C}, certain advantages and disadvantages of libraries become relevant to developers, and they follow a guiding principle accordingly. The choice of guiding principle then influences the selection factors \qww{F}, information sources \qww{S}, and finally the steps toward adoption \qww{P}. As one participant explained,
+All of the concepts of the library adoption process described in section \ref{sec:framework} have complex interactions which are captured in the six guiding principles.  The guiding principles have all the characteristics of patterns; that is, they represent an abstract solution to a recurring problem \cite{riehle:2021:pattern}. On the basis of internal and external conditions \qww{C}, certain advantages and disadvantages of libraries become relevant to developers, and they follow a guiding principle accordingly. The choice of guiding principle then influences the selection factors \qww{F}, information sources \qww{S}, and finally the steps toward adoption \qww{P}. As one participant explained,
  \qi{It's not that always you have to choose a library or framework which is technically the best. Rather capabilities of the library and the organization, the domain, the people, the timing, everything influences that decision.}{P01} 
+
 
 It must be noted that conditions do not come in isolation, and guiding principles also do not activate exclusively. Rather, in practical scenarios, developers are always facing multiple, even conflicting situations, and are balancing between guiding principles to make their final decisions.
 
 Due to space limitations, we are only able to present some of the guiding principles in depth. All six can be found in the Appendix.
+
 
 
 %%%%%%% GP 1
@@ -125,24 +131,28 @@ Developers working on long-term or complex products prefer to choose \qqw{F}{sta
 %\input{GP2.tex} %% Ann: I exclude this one because it is fairly evident (to save space)
 
 %%%%%%% GP 3
+\input{GP3.tex}
 \subsubsection{GP3: Maximize Flexibility}
-\input{GP3.tex} 
-While inspired by the principle of architectural improvement and consistency, architects adopt third party libraries when absolute necessary for specifications. The project P18 worked was such an example where they had less than 20 libraries in a two million line source code. Even when they \qqw{P}{integrate} libraries, they would wrap it under their own structure: 
+
+While inspired by the principle of architectural improvement and consistency, architects adopt third-party libraries when absolute necessary for specifications. The project P18 worked was such an example where they had less than 20 libraries in a two million line source code. Even when they \qqw{P}{integrate} libraries, they would wrap it under their own structure: 
 \qi{We will create just a thin wrapper, that ends up looking like the rest of our platform. The simple source file [wrapper API] is protecting the two million lines of code from the idiosyncrasies of this one particular library.}{P18}
 \qi{Just go with the smaller libraries that solve a very particular problem so that we have full control. But if we integrate with the framework then we always need to solve with that framework because we cannot go outside of that framework until we completely remove that framework}{P9}
+ 
 
 
-
+%\input{GP3.tex}
 %% GP 4
+ %% Ann: I include this one because it is not something most people consider
+\input{GP4.tex}
 \subsubsection{GP4: Empower the Team}
-Adopting third party libraries also empowers the development teams. Open source libraries provide developers working experience with popular development components to acquire transferable knowledge whereas proprietary solutions developed internally can create bottlenecks: 
-\qi{When you move to using something that's an open source third party solution, it's well documented, suddenly an entire team of people can help address a problem and your speed to fixing something goes from multiple days or weeks to hours. And you empower the whole team rather than an [internal] specialist who can't go on vacation because if she does, sorry, you're waiting.}{P22}
+Adopting third-party libraries also empowers the development teams. Open source libraries provide developers working experience with popular development components to acquire transferable knowledge whereas proprietary solutions developed internally can create bottlenecks: 
+\qi{When you move to using something that's an open source third-party solution, it's well documented, suddenly an entire team of people can help address a problem and your speed to fixing something goes from multiple days or weeks to hours. And you empower the whole team rather than an [internal] specialist who can't go on vacation because if she does, sorry, you're waiting.}{P22}
 
  When guided by the empowerment principle, developers often consider \qqw{C}{peer opinions} during the library \qqw{P}{review} phase: 
  \qi{Let's say, I proposed one library from my previous work. And then I have to explain it to the team members.}{P10}
  \qi{I'm not taking a decision for myself. Also there are seniors in every organization who are more experienced and they may have some opinions on it.}{P01}
 
-\input{GP4.tex} %% Ann: I include this one because it is not something most people consider
+
 
 %% GP 5
 \subsubsection{GP5: Ensure Compliance}
@@ -157,7 +167,7 @@ However, not all development teams equally consider the impact of compliance iss
 \subsubsection{GP6: Maintain Continuous Stability}
 Aside from compliance issues, the biggest risk of using a third-party library is that the library won't be maintained.
 
-\qi{If the contributors are gone in those third party libraries repositories, suddenly the whole production application is broken}{P10} 
+\qi{If the contributors are gone in those third-party libraries repositories, suddenly the whole production application is broken}{P10} 
 
 To protect themselves from abandonment and stability risks, developers look for libraries where a \qqw{F}{large community} and contributors are involved. To \qqw{P}{search information} about \qqw{F}{active development}, they check \qqw{S}{source repositories}: 
 \qi{We have to check that whether this library maintenance are active or not. We can determine that by checking their GitHub repository when was the last push was given?}{P04} 
