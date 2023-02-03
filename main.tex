@@ -167,7 +167,8 @@ title={#2},fonttitle=\bfseries,#1}
 \newcommand{\todo}[1]{{\color{red}{\textbf{#1}}}}
 
  %% Ann: I hate the way \qw looks so I've replaced \qw with this new command, \qqw. If the consensus is to return to the look of \qw, this command can be redefined.
- \newcommand{\qqw}[2]{{{\fontfamily{lmdh}\selectfont{\small\textsl{#2}}\normalfont}} (#1)\xspace} %% Usage: \qqw{F}{stability}
+ % \newcommand{\qqw}[2]{{{\fontfamily{lmdh}\selectfont{\small\textsl{#2}}\normalfont}} (#1)\xspace} %% Usage: \qqw{F}{stability}
+  \newcommand{\qqw}[2]{{{\fontfamily{lmdh}\selectfont{\small\textsl{#2}}\normalfont}}\xspace} %% Usage: \qqw{F}{stability}
  \newcommand{\qww}[1]{(#1)\xspace} %% Usage: \qww{F}
 
 
@@ -241,7 +242,7 @@ title={#2},fonttitle=\bfseries,#1}
 % \title{Guiding Principles for the Software Library Adoption Process: Perspectives from Industry}
 
 %\title{A Model of Software Library Adoption in the Industry}
-\title{Software Library Adoption Process and Principles in the Industry}
+\title{Process, Factors, Conditions and Guiding Principles: A Model of Software Library Adoption in Industry}
 
 %\title{Promises and Perils of the Software Library Adoption Process}
 %\title{Processes and Principles Guiding Software Library Adoption in the Industry: Perspectives from Industrial Developers}
@@ -285,7 +286,7 @@ title={#2},fonttitle=\bfseries,#1}
 %% The abstract is a short summary of the work to be presented in the
 %% article.
 \begin{abstract}
-Modern day rapid software development is often facilitated by the reuse of third-party software libraries. Software library adoption includes the selection as well as the maintenance of a library. Various factors and conditions may influence the adoption of a software library in a company. However, while literature offers insights on what factors could influence the selection of library, we are not aware of any study that offered insights into the overall process and principles that companies follow to adopt a software library. In this paper, our research explores how the conditions and factors of the environment influence developer decisions in library selection and maintenance. Using Straussian grounded theory, we conducted \numInterviews semi-structured interviews. The result is a theoretical framework of a library adoption model, six guiding principles of library adoption, and six recommendations for developers and organizations. Our work lays the groundwork for the development of a comparative library analysis tool to enable efficient decisions about libraries.
+Modern day rapid software development is often facilitated by the reuse of third-party software libraries. Software library adoption includes the selection as well as the maintenance of a library. Various factors and conditions may influence the adoption of a software library in a company. However, while literature offers insights on what factors could influence the selection of library, we are not aware of any study that offers insights into the overall process and principles that companies follow to adopt a software library. In this paper, our research explores how the conditions and factors of the environment influence developer decisions in library selection. Using Straussian grounded theory, we conducted \numInterviews semi-structured interviews. The result is a theoretical framework of a library adoption model, six guiding principles of library adoption, and six recommendations for developers and organizations. Our work lays the groundwork for the development of a comparative library analysis tool to enable efficient decisions about libraries.
 %consisting of 5 steps, 5 major information sources, 53 selection factors and conditions and 6 overarching guiding principles. The library adoption model can be used for the development of a comparative library analysis tool to enable faster and more accurate decisions among developers.
 \end{abstract}
 
@@ -314,19 +315,19 @@ Modern day rapid software development is often facilitated by the reuse of third
 %%
 %% Keywords. The author(s) should pick words that accurately describe
 %% the work being presented. Separate the keywords with commas.
-\keywords{third-party, software library, adoption process, guiding principle, interview study, qualitative research} % AB: added last 2 terms as these were present in my recent ICSE paper
+\keywords{third-party, software library, adoption process, guiding principle, pattern, open source software, interview study, qualitative research} % AB: added last 2 terms as these were present in my recent ICSE paper, added OSS because we mention it a lot and most of my research has this tag, added pattern because we do use that format and that's another large community
 %%
 %% This command processes the author and affiliation and title
 %% information and builds the first part of the formatted document.
 \maketitle
 \balance
 \section{Introduction}
-In 2011, Marc Andersson famously noted that \textit{"Software is eating the world"} \cite{website:eat-world}. Indeed, software has now become the enabler of almost every tasks we do or services we offer/consume. With growing demands of tools and techniques, software companies seek to build and deploy their products quickly and efficiently. Modern day rapid software development is often facilitated by the reuse of third-party software libraries or APIs (Application Programming Interfaces). The libraries can be open source or proprietary. Nevertheless, software/IT companies benefit from the adoption of third-party software libraries and often prefer the reuse of a library over the of re-implementation of a feature from scratch~\cite{uddin2017opiner}. For example, according to a 2017 report by the European Commission, the use of open source software saves European companies approximately \euro456 billion per year through increased productivity, efficiency, and direct cost savings \cite{eu2017economic}. These advantages come from standardization and reductions in vulnerability, development time, and expertise. However, such benefits do not always accrue; Spinellis outlines many potential concerns of relying on an open source library, among them: the project might not be maintained, the code may not be of high quality, the license may not allow the desired use, and the documentation may be poor \cite{spinellis2019select}.
+In 2011, Marc Andersson famously noted that \textit{"Software is eating the world"} \cite{website:eat-world}. Indeed, software has now become the enabler of almost every tasks we do or services we offer/consume. With growing demands of tools and techniques, software companies seek to build and deploy their products quickly and efficiently. Modern day rapid software development is often facilitated by the reuse of third-party software libraries or APIs (Application Programming Interfaces). The libraries can be open source or proprietary. Nevertheless, software/IT companies benefit from the adoption of third-party software libraries and often prefer the reuse of a library over the of re-implementation of a feature from scratch~\cite{uddin2017opiner}. For example, according to a 2017 report by the European Commission, the use of open source software saves European companies approximately \euro456 billion per year through increased productivity, efficiency, and direct cost savings \cite{eu2017economic}. These advantages come from standardization and reductions in vulnerability, development time, and required expertise. However, such benefits do not always accrue; Spinellis outlines many potential concerns of relying on an open source library, among them: the project might not be maintained, the code may not be of high quality, the license may not allow the desired use, and the documentation may be poor \cite{spinellis2019select}.
 
 The process of selecting a library is not simple, as it requires balancing a number of considerations, both those inherent to the library itself and those relating to the context in which it will be used. Developers or the deciding team in a company must ask questions like whether the library will accommodate the company's expansion plans and what the full legal implications are of using the library (including potentially hidden obligations) 
 \cite{spinellis2019select,wolter:2022:open}. Factors such as the fit between functional capability of available software and the acceptance (or rejection) of the technology by peers may also influence the selection decision \cite{dishaw1998supporting,eckhardt2009influences}. % Dishaw: Fit is the matching of the capabilities of the tech- nology to the demands of the task.
 
-While open source software represents a large proportion of the external libraries employed, companies also routinely use proprietary libraries, some of which may be part of a long supply chain which also involves open source software \cite{harutyunyan:2018:understanding}. All of the considerations of open source software still apply: the company needs to consider if the library will continue to be developed, is a good fit for the task, and so on. Further, while the code for open source libraries is freely available, there may still be financial considerations such as switching costs, support, and access to extended (proprietary) features \cite{dahlander2006business}. Therefore, while certain factors may be of greater or lesser importance to a company when evaluating a particular library, the possible considerations are not substantially different for proprietary and open source libraries. 
+While open source software represents a large proportion of the external libraries, companies also routinely use proprietary libraries \cite{harutyunyan:2018:understanding}. All of the considerations of open source software still apply: the company needs to consider if the library will continue to be developed, is a good fit for the task, and so on. Further, while the code for open source libraries is freely available, there may still be financial considerations such as switching costs, support, and access to extended (proprietary) features \cite{dahlander2006business}. Therefore, while certain factors may be of greater or lesser importance to a company, the possible considerations are not substantially different for proprietary and open source libraries. 
 
 % Indeed, it is crucial to pick the right software library in a large-scale software system, given that the replacement of a library because a new library can induce breaking changes into the system that take significant time to address. At the same time, the adoption of a new software library can be a time consuming and resource intensive process in a large software company, e.g., legal team needs to check for compatible licenses, product team needs to determine the best candidate out of the available libraries, etc. It is thus important to understand the decision making processes software companies follow to select and adopt a new software library and the factors and principles they consider during the process. 
 
@@ -334,13 +335,13 @@ The selection factors of software libraries have been the subject of several stu
 % As such, software library adoption in the industry is a multi-faceted process that can encapsulate an end-to-end process, where a given step can be influenced by diverse factors and principles.  
 A holistic understanding of the adoption process is missing in the literature. 
 
-In this paper, we conducted 24 semi-structured interviews of industrial developers to understand the adoption process of third-party software in a company. The outcome is a theoretical framework of software library adoption model that consists of a catalog of steps, conditions, factors, and principles related to software library adoption in the industry. By conditions, we mean environmental characteristics which are independent of the library under consideration. By contrast, by factors we mean characteristics of the library itself. We answer three research questions to describe our derived software library adoption model (RQ).
+In this paper, we conducted 24 semi-structured interviews of industrial developers to understand the adoption process of third-party software in a company. The outcome is a theoretical framework of software library adoption model that consists of a catalog of steps, conditions, factors, and principles related to software library adoption in the industry. By conditions, we mean environmental characteristics which are independent of the library under consideration. Factors refer to characteristics of the library itself. We answer three research questions to describe our derived software library adoption model. % (RQ).
 
 \nd\bf{RQ1: What are the major steps developers follow in the industry during their adoption of a software library?} We found that developers go through five iterative steps of search, compare, review, integrate and maintain for library adoption. \fig\ref{fig:adoption-process} shows how the five steps can support the selection and adoption process of software libraries. During this process, software developers/teams collect library related information from five major information sources (e.g. online forums, colleagues, etc.). To the best of our knowledge, ours is the first study that presents an end-to-end adoption process like \fig\ref{fig:adoption-process} (explained further in \sec\ref{sec:phases}).
 %\minaoar{should we also note that this adoption process is first in literature for software libraries? For RQ2 and RQ3, we compared with existing literature.}
 \begin{figure}[h]
     \centering
-    \includegraphics[scale=.6]{images/adoption-process.pdf}
+    \includegraphics[scale=.7]{images/adoption-process.pdf}
     \caption{Software library adoption process}
     \label{fig:adoption-process}
 \end{figure}
@@ -370,7 +371,7 @@ Based on the derived library adoption model, we offer six recommendations that s
 % \todo{@Someone - spell out the contributions. Then make sure that they are reflected in the abstract.}
 % \@todo{Culminating in X recommendations for industry}
 
-\nd\bf{Replication Package \cite{website:replication-package}} contains anonymized transcribed interviews, study protocol, codebook and scripts for the results.
+\nd\bf{The Replication Package \cite{website:replication-package}} contains anonymized transcribed interviews, study protocol, codebook and scripts for the results.
 % Our replication package contains the interview script, invitation emails, consent form, REB approval, final codebook, assessment of grounded theory evaluation criteria, and an Appendix \cite{website:replication-package}. In order to preserve the anonymity of our participants and to adhere to our ethics approval, we do not share a list of interview participants or the interview transcripts. 
 
 

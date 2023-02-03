@@ -57,18 +57,18 @@ Another source of information is \code{repositories}, which can consist of the \
 \subsection{The Factors and Conditions (RQ2)}
 \begin{figure*}
     \centering
-    \includegraphics[scale=0.8]{images/conditions.pdf}
+    \includegraphics[scale=0.75]{images/conditions.pdf}
     \caption{Factors and conditions influencing adoption process (gray boxes are concepts that are found first time in our study)}
     \label{fig:conditions}
 \end{figure*} \fig\ref{fig:conditions} summarizes the concepts related to conditions and factors that can influence the library adoption process. 
 % Our second research question was ``What conditions and technical factors influence the library adoption process?'' In order to answer this question, we turn to the conditions of library adoption and the factors of library selection criteria.
 
 \subsubsection{Conditions Influencing Library Adoption Process (Which)}\label{sec:conditions}
-Library adoption process can be influenced by environmental, organizational, team specific, individual, and technical scenario specific conditions and opinions. These conditions affect which guiding principles are most appropriate. In the major category of \code{conditions}, we identified five categories: \code{environmental}, \code{organizational}, \code{team influence}, \code{individual}, and \code{technical}, which are depicted in relation to the process of adoption in Figure~\ref{fig:framework}. There were 23 concepts associated with these categories, as shown on Figure~4 in the Appendix.
+Library adoption process can be influenced by environmental, organizational, team specific, individual, and technical scenario specific conditions and opinions. These conditions affect which guiding principles are most appropriate. In the major category of \code{conditions}, we identified five categories: \code{environmental}, \code{organizational}, \code{team influence}, \code{individual}, and \code{technical}, which are depicted in relation to the process of adoption in Figure~\ref{fig:framework}. There were 23 concepts associated with these categories, as shown in \fig\ref{fig:conditions}.
 
 \code{Environmental} conditions include the \code{geographic} and \code{legal} landscapes. For example, regulatory requirements influence the legal conditions under which the company operates:
-\qi{in Germany you have to report a security breach in your company\ldots you have to pay two percent of the revenue if a security breach happens and your data gets leaked.}{P17} 
-Geography, too, can influence selection, outside of any legal requirements:
+\qi{In Germany you have to report a security breach in your company\ldots you have to pay two percent of the revenue if a security breach happens and your data gets leaked.}{P17} 
+Geography can influence selection, outside of legal requirements:
 \qi{{\ldots} everywhere it's not still functional programming, it's not widely adopted. I recently migrated from Asia to Europe and I never saw this trend widely adopted in our previous the companies. But here [in Europe], I've seen a lot of people are very interested about that functional programming paradigms. So, to choose the libraries, maybe their background, their geography, their location, that all of these things can have some impact.}{P01}
 
 Organizations can also enforce policies for library selection. Under \code{organizational} conditions we observed \code{investment capacity}, \code{company culture}, existing \code{company tech}, and \code{application domain}. There can also be a \code{team influence}, based on \code{team capability}, \code{expert/lead opinion}, \code{operations opinion}, \code{peer opinion}, \code{stakeholder opinion}, and \code{product/project manager opinion}. Team capability is demonstrated with the following quote:
@@ -83,7 +83,7 @@ Organizations can also enforce policies for library selection. Under \code{organ
 
 
 \subsubsection{Factors Influencing Library Selection Process (What)}\label{sec:factors}
-The factors of the library itself help inform the process, as depicted in Figure~\ref{fig:framework}. We identified four categories of \code{factors}: \code{software factors}, \code{commercial factors}, \code{maintenance factors}, and \code{external factors}. Under these we found 28 concepts, whose relation to the categories is shown in Figure~4 in the Appendix.
+The factors of the library itself help inform the process, as depicted in Figure~\ref{fig:framework}. We identified four categories of \code{factors}: \code{software factors}, \code{commercial factors}, \code{maintenance factors}, and \code{external factors}. Under these we found 28 concepts, whose relation to the categories is shown in  \fig\ref{fig:conditions}.
 
 In the category of technical \code{software factors}, we see \code{compatibility}, \code{stability}, \code{flexibility}, \code{capability}, \code{security}, \code{performance}, \code{ease of use}, \code{ease of installation}, \code{size of library}, and \code{interesting interface} as concerns. Several of these considerations are provided by P15:
 \qi{We have to understand how much memory it is gonna use. How much time it takes to execute? Or how much CPU is gonna use? Is this library compatible with the development environment? How is the thread safety within the library?}{P15}
@@ -94,14 +94,14 @@ After technical factors, developers may have to consider \code{commercial factor
 \code{Maintenance factors} include whether the code is under \code{active development}, enjoys \code{community support}, is \code{supported by a reputed organization}, has a \code{large community}, offers \code{customer support}, and is \code{supported by own organization}. 
 
 Finally, \code{external factors} can come into play. These include \code{popularity}, \code{search engine ranking}, \code{familiarity}, \code{used by reputed organizations}, and \code{detailed benchmark}. The following quotations demonstrate how popularity and familiarity affect selection:
-\qi{We cannot compare sixty million with one thousand downloads. So this library [with high download count] is obviously a choice.}{P04} 
+\qi{We cannot compare sixty million with one thousand downloads. So this [frequently downloaded] library is obviously a choice.}{P04} 
  \qi{Oftentimes what happens is that the decision or the choice gets influenced by individual's bias or familiarity or previous experience with one particular product or service}{P08} 
 
 
 \subsection{The Guiding Principles (RQ3)}
 \label{sec:gp}
 
-All of the concepts of the library adoption process described in section \ref{sec:framework} have complex interactions which are captured in the six guiding principles.  The guiding principles have all the characteristics of patterns; that is, they represent an abstract solution to a recurring problem \cite{riehle:2021:pattern}. On the basis of internal and external conditions \qww{C}, certain advantages and disadvantages of libraries become relevant to developers, and they follow a guiding principle accordingly. The choice of guiding principle then influences the selection factors \qww{F}, information sources \qww{S}, and finally the steps toward adoption \qww{P}. As one participant explained,
+All of the concepts of the library adoption process described in section \ref{sec:framework} have complex interactions which we captured in the six guiding principles.  The guiding principles have all the characteristics of patterns; that is, they represent an abstract solution to a recurring problem \cite{riehle:2021:pattern}. On the basis of internal and external conditions, certain advantages and disadvantages of libraries become relevant to developers, and they follow a guiding principle accordingly. Thus the guiding principles can influence the selection factors, information sources, and the adoption process. 
  \qi{It's not that always you have to choose a library or framework which is technically the best. Rather capabilities of the library and the organization, the domain, the people, the timing, everything influences that decision.}{P01} 
 
 
@@ -114,7 +114,8 @@ Due to space limitations, we are only able to present some of the guiding princi
 %%%%%%% GP 1
 \subsubsection{GP1: Just Do It}
 When developers are concerned primarily with time-to-market, or are not that interested in long-term maintenance, they may opt to make use of a third-party libraries which are \qqw{F}{easy to use} and \qqw{F}{easy to install}, as illustrated by the following quotes. 
-% \input{GP1.tex} 
+
+
 
 \qi{[The library] makes our life simpler. The application development definitely gets faster by using that.}{P15}
 \qi{It was going to solve a particular promotion or something, and it was going to be retired. So usually the long term maintainability was not a factor.}{P06}
@@ -123,34 +124,39 @@ When developers are concerned primarily with time-to-market, or are not that int
 
 %%%%%%%% GP 2
 \subsubsection{GP2: Reuse Robust Component}
-Developers working on long-term or complex products prefer to choose \qqw{F}{stable} which are \qqw{F}{actively maintained} for a long period and supported by a \qqw{F}{large community}. The guiding principle is ``Reuse Robust Component.'' Examples of its use are:
+Developers working on long-term or complex products prefer to choose \qqw{F}{stable} which are \qqw{F}{actively maintained} for a long period and supported by a \qqw{F}{large community}. The guiding principle is \code{Reuse Robust Component}. Examples of its use are:
 
-\qi{Don't reinvent the wheel. I want to use as much as already developed, tested and robust software into my solution\ldots the main thing is that reusability and having stability in the application inherently out-of-the-box by using a stable, robust library}{P22}
+
+ 
+\qi{%Don't reinvent the wheel. 
+I want to use as much as already developed, tested and robust software into my solution\ldots the main thing is that reusability and having stability in the application inherently out-of-the-box by using a stable, robust library}{P22}
 \qi{With a project like ours [C++ code application developed over 27 years], the main time we adopt a library is when it is an implementation of a tech spec. OpenSSL, there's a tech spec for SSL. Here's a whole library that has been carefully implemented against the spec.}{P18}
 
 %\input{GP2.tex} %% Ann: I exclude this one because it is fairly evident (to save space)
 
 %%%%%%% GP 3
-\input{GP3.tex}
+ \input{GP1.tex} 
 \subsubsection{GP3: Maximize Flexibility}
 
 While inspired by the principle of architectural improvement and consistency, architects adopt third-party libraries when absolute necessary for specifications. The project P18 worked was such an example where they had less than 20 libraries in a two million line source code. Even when they \qqw{P}{integrate} libraries, they would wrap it under their own structure: 
+
 \qi{We will create just a thin wrapper, that ends up looking like the rest of our platform. The simple source file [wrapper API] is protecting the two million lines of code from the idiosyncrasies of this one particular library.}{P18}
+
 \qi{Just go with the smaller libraries that solve a very particular problem so that we have full control. But if we integrate with the framework then we always need to solve with that framework because we cannot go outside of that framework until we completely remove that framework}{P9}
- 
+\input{GP3.tex} 
 
 
 %\input{GP3.tex}
 %% GP 4
  %% Ann: I include this one because it is not something most people consider
-\input{GP4.tex}
 \subsubsection{GP4: Empower the Team}
 Adopting third-party libraries also empowers the development teams. Open source libraries provide developers working experience with popular development components to acquire transferable knowledge whereas proprietary solutions developed internally can create bottlenecks: 
 \qi{When you move to using something that's an open source third-party solution, it's well documented, suddenly an entire team of people can help address a problem and your speed to fixing something goes from multiple days or weeks to hours. And you empower the whole team rather than an [internal] specialist who can't go on vacation because if she does, sorry, you're waiting.}{P22}
 
  When guided by the empowerment principle, developers often consider \qqw{C}{peer opinions} during the library \qqw{P}{review} phase: 
+  \qi{I'm not taking a decision for myself. Also there are seniors in every organization who are more experienced and they may have some opinions on it.}{P01}
  \qi{Let's say, I proposed one library from my previous work. And then I have to explain it to the team members.}{P10}
- \qi{I'm not taking a decision for myself. Also there are seniors in every organization who are more experienced and they may have some opinions on it.}{P01}
+
 
 
 
@@ -161,6 +167,7 @@ However, not all development teams equally consider the impact of compliance iss
 \qi{Since we work with people from Europe, UK, US and other areas and they have a very strong data security policy, we have to be confident that they're secure well.}{P04} 
 \qi{So there are libraries who advertise that they are already GDPR \cite{website:gdpr} compliant or FedRAMP \cite{website:fedramp} compliant. So those kinds of libraries are always preferred over libraries that don't have a clear signal.}{P19} 
 
+\input{GP4.tex}
 %\input{GP5.tex} %% Ann: I exclude this one because it is fairly evident (to save space)
 
 %% GP 6
