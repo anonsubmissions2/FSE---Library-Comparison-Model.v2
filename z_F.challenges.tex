@@ -1,0 +1,57 @@
+
+\section{Challenges and Recommendations for Library Adoption}
+Before being able to integrate a library, there are certain entry barriers for which an organization or a developer may try avoid considering library usage at all. Such obstacles can be caused by organizational policy, and technology or even by developers' mindset, and experience. It is important for organizations and developers be aware of such barriers and work towards resolving those.
+% \subsection{Recommendations}
+
+\subsection{Lack of Organizational Policy}
+We have observed that even before being able to integrate a library, there are certain \code{conditions}  of an organization or a developer which may prevent them from considering a library at all. Obstacles can be caused by organizational policy, technology, or even by the developer's mindset and experience. In some cases, a lack of supportive process, such as an Open Source Software Office (OSPO), or restricted internet access meant that developers lacked clarity about which libraries could be used. 
+\begin{recommendation}{rec:ospo}
+  {Organizations should formalize 
+third-party library policy, and create streamlined, proportional processes to support it.}
+\end{recommendation}\medskip
+
+\subsection{Lack of Maintenance Preparation}
+For developers and organizations the use of libraries not only brings benefits, it also brings disadvantages which must be considered. Participants noted that often developers can focus on solving imminent problems in hand and have a blind spot on the future maintenance of a library. However, as we have observed, library maintenance is a major part of the adoption process and developers should be aware of the \code{post integration maintenance} period. 
+\begin{recommendation}{rec:maintenance}
+  {Organizations should have a strategy for maintaining and upgrading libraries, which is also considered during the library selection process.}
+  %Developers not only need to consider the maintenance related concerns while reviewing a library, they also need to deploy a strategy to continually maintain or upgrade libraries. The strategy may involve developing organizational policy, or even allocating certain resources for future maintenance.}
+\end{recommendation}\medskip
+
+\subsection{Conflicting Priorities and Lack of Future Remediation}
+Though we presented the conditions of each guiding principle separately, in reality, developers may have multiple types of conditions with conflicting guiding principles. For example, in a mature organization with large scale application, a team may face urgent production issue in a critical feature that may prompt \code{Just Do It} principle immediately, however, they will need to adopt \code{Reuse Robust Component} once the urgency diminishes. %The long-term maintainability of a library is not always a consideration in all situations. While it is critical in the guiding principle (GP) ``Ensure Compliance,'' it is of little interest under the conditions where ``Just Do It'' is applicable. 
+\begin{recommendation}{rec:gp}
+%Developers should identify the appropriate guiding principle or principles before they can begin the library adoption steps.
+Developers should consider multiple guiding principles when faced with complicated \& conflicting conditions and should plan short-term and long-term action plans. 
+\end{recommendation}\medskip
+
+\subsection{Legal Risks}
+Marketing theories consider cut-off factors as those factors of product whose absence will bar the consumer from buying it \cite{blackwell2001consumer}. \\% AB: This is a horrible hack to force line fitting.
+During our interviews, participants observed that all developers consider \code{capability} and \code{compatibility} of libraries as such cut-off factor. However, they also noted that developers in few conditions (small or \code{early stage} organizations, or \code{early career} developers) may be unaware of the severity of security and license issues and may ignore those. Industry experts strongly recommended  considering compliance issues as cut-off factors.
+ \begin{recommendation}{rec:cutoff}
+Organizations should consider \code{security} and \code{license} issues, irrespective of \code{organizational} or \code{environmental} conditions.
+\end{recommendation}\medskip
+
+\subsection{Lack of Team Participation}
+Developers seek information from a variety of sources. If the organization does not have a very welcoming, inclusive culture, critical analysis of libraries can be ultimately influenced and driven by outspoken people. We have heard from the interviewees about the necessity of inclusive culture where they assumed that the inclusivity should prevail in a software development team from the beginning of the recruitment process up to the development team's regular discussion. However, it was also evident that even in larger well managed organizations, such inclusivity may remain very subtle and may not be able to promote a democratic decision throughout the library selection process. It would be the responsibility of the team leader to let normally silent members communicate their ideas in whatever preferred (verbal, written) way possible.
+ \begin{recommendation}{rec:inclusivity}
+Organizations should cultivate openness and encourage inclusivity irrespective of individual's communication preference. 
+\end{recommendation}\medskip
+
+\subsection{Absence of Learning Culture}
+ Even when the culture promotes openness, development teams often have few enthusiastic developers who love to explore and whose opinions might have a disproportionate weight on discussions. Teams are better when all members will develop a habit of regular studies and in the long run they will be able to adapt much better with technological changes as well as make decisions about third-party tools or libraries in general. We found from the participants that enthusiastic early career developers often care about getting things done and frequently wants to try out new libraries for richness of their career (or resume). %However, raising the concern of the lifelong maintenance of third-party libraries, interviewees recommended to avoid libraries when it is not necessary. 
+ Providing sanctioned, scheduled opportunities for learning allow experimentation with new technologies without jeopardising the production system.
+  \begin{recommendation}{rec:hackathon}
+  Organizations should promote a culture of technical exploration and discussion through study circles or hackathons.
+\end{recommendation}
+
+\subsection{Lack of Reliable Selection Tools}
+With the organization support, policy and team's willingness to collaborate and explore libraries, there are always challenges of finding out the appropriate library by going through tons of articles, documents, and reviews online. There still is lack of guiding tools that can support library selection (or in general, technology selection) by summarizing the large amount of data according to the team's priorities. Developers cannot rely on the existing summarization research outcomes since the detail reference and quality assurance of those tools still are not considered worthy of industrial usage.
+  \begin{recommendation}{rec:summary-tool}
+  Researchers and tools developers can consider developing reliable library selection tools that can properly mine the online reviews and also provide the references of the summaries.
+\end{recommendation}
+
+\subsection{Concerns of Inconsistency in Latest Chatbots}
+Some teams started using large language model based chatbots (e.g., ChatGPT) to explore initial information about available libraries. However, they are concerned about the authenticity of the responses from models like ChatGPT as it often provides contradictory answers according to their experience.
+  \begin{recommendation}{rec:chatgpt-consistency}
+  Researchers can identify the quality concerns and inconsistent response of conversational tools like ChatGPT and provide some confidence score against the library related responses.
+\end{recommendation}

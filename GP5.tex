@@ -1,13 +1,11 @@
 \begin{practice}{5}{Ensure Compliance}
 \actor{Developers, Information Security Experts, Legal Experts, Open Source Program Office}
-\condition{Because of regulatory compliance or for company culture, some organizations will be more cautious about using third-party libraries for legal, security, and privacy reasons. 
-Developers will often have little technical expertise on such specialized issues.
-Sometimes small or early stage companies may even ignore the importance of compliance issues.
-A few application domains such as health, finance, media are also more regulated and require organizational policies for ensuring compliance.}
-\concern{Will there be any penalty or legal complication arising from using a third-party library? How to protect the organization?}
+\condition{Matured, regulated org or industry (health, finance). Presence of dedicated security/legal experts.}
+\concern{Any penalty or legal complication arising from using a library? How to protect the organization?}
 \solution{Use a library which is compliant with the application security standards and legal requirements}
-\consideration{The license of the library should be compatible with the business and license of the target software. The security and privacy concerns should be clarified and well taken care of by the library contributors.}
+\consideration{License compatible with existing code and business. Secure, no known vulnerability.}
 \steps{Reach out to specialists in the organization for taking their expert consent before adopting the library. See the license and security declarations in the library documentation in the source code or package repository.}
+\consequence{Early stage companies may ignore compliance and can face existential crisis.}
 \example{We had a very bad experience with this. With the legacy system, we were using so many different libraries and there is a licensing issue and we had to replace half of the library. Otherwise we had to pay lots of money. So that's why we are now very, very concerned about adding any external library, because if we don’t comply with the license, it will be a legal problem.}{P09}
 \end{practice}
 

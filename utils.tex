@@ -53,7 +53,7 @@
 \newcommand{\tc}[0]{\textcolor{green}{ [add citation]}}
 
 % following command is used to highlight text/numbers which can be changed after all the inerview/data collection is done. 
-\newcommand{\td}[1]{\textcolor{blue}{(#1)}}
+\newcommand{\td}[1]{\textcolor{black}{(#1)}}
 
 \newcommand{\autourfill}[1]{\tikz[baseline=(X.base)]\node [draw=blue,fill=blue!40,semithick,rectangle,inner sep=2pt, rounded corners=3pt] (X) {#1};}
 
@@ -66,13 +66,24 @@
 
 
 
-\newcommand\actor[1]{\textbf{Actor:}  #1\vspace*{.5em}\\} 
-\newcommand\condition[1]{\textbf{Condition:}  #1\vspace*{.5em}\\} 
-\newcommand\concern[1]{\textbf{Concern:} #1\vspace*{.5em}\\}
-\newcommand\solution[1]{\textbf{Solution:} #1\vspace*{.5em}\\ }
+\newcommand\actor[1]{\textbf{Actor:}  #1\\} 
+\newcommand\condition[1]{\textbf{Condition:}  #1\\} 
+\newcommand\concern[1]{\textbf{Concern:} #1\\}
+\newcommand\solution[1]{\textbf{Solution:} #1\\ }
 \newcommand\consideration[1]{ \textbf{Consideration:} #1 }
-\newcommand\steps[1]{\vspace*{.5em}\\\textbf{Steps:} #1}
-\newcommand\example[2]{\vspace*{.5em}\\\textbf{Example Data:} \qqi{#1}{#2}}
+\newcommand\steps[1]{\\\textbf{Steps:} #1}
+\newcommand\consequence[1]{\\\textbf{Consequence:} #1}
+\newcommand\example[2]{\\\textbf{Example Trace:} \qqi{#1}{#2}}
+%#\newcommand\example[2]{\hline\\\textbf{Example Data:} \qqi{#1}{#2}}
+%\newcommand\example[2]{\vspace*{.1em}\\\textbf{Example Trace:} \qqi{#1}{#2}}
+
+% \newcommand\actor[1]{\textbf{Actor:}  #1\vspace*{.5em}\\} 
+% \newcommand\condition[1]{\textbf{Condition:}  #1\vspace*{.5em}\\} 
+% \newcommand\concern[1]{\textbf{Concern:} #1\vspace*{.5em}\\}
+% \newcommand\solution[1]{\textbf{Solution:} #1\vspace*{.5em}\\ }
+% \newcommand\consideration[1]{ \textbf{Consideration:} #1 }
+% \newcommand\steps[1]{\vspace*{.5em}\\\textbf{Steps:} #1}
+% \newcommand\example[2]{\vspace*{.5em}\\\textbf{Example Data:} \qqi{#1}{#2}}
 
 %\newcommand{minaoar}[1]{\textcolor{blue}{Minaoar: #1}}
 
@@ -82,3 +93,8 @@
   \setlength\heavyrulewidth{0.30ex}
   \setlength\cmidrulewidth{0.10ex}
   \setlength\lightrulewidth{0.10ex}
+
+\newcommand{\principle}[0]{\textcolor{black}{decision patterns}}
+
+\newcommand{\model}[0]{\textcolor{black}{library adoption model}}
+% \newcommand{\model}[0]{\textcolor{black}{library consumer behavior model}}

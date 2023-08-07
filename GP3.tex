@@ -1,11 +1,12 @@
 %\vspace{-5mm}
 \begin{practice}{3}{Maximize Flexibility} % Was Improve Application Structure
 \actor{Developers, Architects}
-\condition{Large scale software applications have their own structure which evolved over time and may follow some software design principles. System designers want to use new libraries in a way that improves the application structure, or at least does not deteriorate it.}
+\condition{Large scale software with custom framework. Library fits well and improves current architecture.}
 \concern{How can the architecture be improved or be protected from unwanted rigidity while using a library?}
-\solution{Use a library that just fits right with the application in terms of the size and flexibility. Consider wrapping the third-party library in an API to allow replacement of the library without affecting dependent code.}
+\solution{Flexible library, small sized, wrapping the library in API to allow future replacement.}
 \consideration{The library should be flexible and should not be too large in size compared to the system.}
 \steps{Find, compare, and review libraries. Conduct design review to assess impact on architecture. Review internal organizational content for design principles.}
+\consequence{Ensures long-term maintenance, less dependent on external changes. Avoids libraries if possible.}
 \example{The moment you have to bring something in because there are new requirements is the time to assess how you've structured your application and does it still serve you and your customers or the business requirements you have. So that’s the opportunity to look at the structural aspect of the application and make sure you do want to avoid changing it or maybe
 it's the time to change it.}{P22}
 \end{practice}%\vspace{-4mm}

@@ -1,8 +1,9 @@
-\documentclass[sigconf,review,anonymous, table]{acmart}
+    %\documentclass[sigconf,review,anonymous, table]{acmart} 
+\documentclass[manuscript,review,screen, table]{acmart}
 %\documentclass[sigconf,anonymous, table]{acmart}
-%\documentclass[manuscript,screen, table]{acmart}
 \usepackage{paralist}
-\usepackage{enumitem,kantlipsum}
+% \usepackage{enumitem,kantlipsum}
+\usepackage{enumitem}
 \usepackage{pgf-pie}
 \usepackage{tikz}
 \usepackage[most]{tcolorbox}
@@ -17,6 +18,7 @@
 \tcbuselibrary{listings,breakable}
 \usepackage{placeins,newfloat}
 \usepackage{booktabs}
+\usepackage[multiple]{footmisc}
 
 \def\bf{\textbf}
 \def\eq {Equation~}
@@ -51,7 +53,9 @@
 %% We use a different version in the main paper and in appendix!
 \newenvironment{practice}[2]
     {
-   \begin{center}\begin{tcolorbox}[width=.48\textwidth, breaking, skin=enhanced jigsaw, arc=0pt, title={\textbf{Guiding Principle #1: #2}}]
+   \begin{center}\begin{tcolorbox}[%width=.48\textwidth, 
+   %breaking, 
+   skin=enhanced jigsaw, arc=0pt, title={\textbf{Decision Pattern #1: #2}}]
     
     }
     {\end{tcolorbox}\end{center} }
@@ -68,7 +72,7 @@
 
 \normalsize
 \let\labelindent\relax
-\usepackage{enumitem}
+% \usepackage{enumitem}
 
 \newcommand{\nd}{\vspace{1mm}\noindent}
 \usepackage{caption}
@@ -114,14 +118,14 @@
 \usepackage{paralist}
 \usepackage[outercaption]{sidecap}    
 %\usepackage{unicode-math}
-\usepackage{amssymb}% http://ctan.org/pkg/amssymb
+%\usepackage{amssymb}% http://ctan.org/pkg/amssymb
 \usepackage{pifont}% http://ctan.org/pkg/pifont
 \newcommand{\cmark}{\ding{51}}%
 \newcommand{\xmark}{\ding{55}}%
 
 \newcommand{\dc}[1]{\href{https://devrant.com/rants/#1/}{$R_{#1}$}}
-
-\usepackage{enumitem}
+\usepackage{soul}
+% \usepackage{enumitem}
 \hypersetup{
     colorlinks=true,
     linkcolor=blue,
@@ -181,6 +185,7 @@ title={#2},fonttitle=\bfseries,#1}
 \newenvironment{smallquote}%
 {\list{}{\leftmargin=0.15in\rightmargin=0.15in}\item[]}%
   {\endlist}
+  
 \newcommand{\quotebox}[2]{\begin{smallquote}\textit{``#2''}\ifthenelse{\equal{#1}{}}{}{ \mbox{-}~#1}\end{smallquote}}
 
 \newenvironment{observation}[2]{
@@ -209,11 +214,13 @@ title={#2},fonttitle=\bfseries,#1}
                 frametitleaboveskip=-\ht\strutbox,
                 frametitlealignment=\raggedright,
                 nobreak=true,
-                skipabove=10pt,
+%                skipabove=10pt,
                 skipbelow=10pt,
         ]%
         \label{#1}}{\end{mdframed}}
 
+%\mdfsetup{skipabove=\topskip,skipbelow=\topskip}
+\mdfsetup{skipabove=2,skipbelow=5}
 
 \input{utils}
 \AtBeginDocument{%
@@ -226,7 +233,7 @@ title={#2},fonttitle=\bfseries,#1}
 \acmDOI{XXXXXXX.XXXXXXX}
 
 %% These commands are for a PROCEEDINGS abstract or paper.
-\acmConference[ESEC/FSE 2023]{The 31st ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering}{11 - 17 November, 2023}{San Francisco, USA}
+%\acmConference[ESEC/FSE 2023]{The 31st ACM Joint European Software Engineering Conference and Symposium on the Foundations of Software Engineering}{11 - 17 November, 2023}{San Francisco, USA}
 
 %
 %  Uncomment \acmBooktitle if th title of the proceedings is different
@@ -238,11 +245,14 @@ title={#2},fonttitle=\bfseries,#1}
 \acmISBN{978-1-4503-XXXX-X/18/06}
 
 \begin{document}
+%\title{Library Consumer Behavior Model: Challenges and Tools for Library Adoption}
+%\title{A Theory of Software Library Adoption Model}
+\title[The Promises and Perils of Third-Party API Selection]{\textit{``How do people decide? There are like 50 things implementing the same thing. Which one should I use?"}: The Promises and Perils of Third-Party API Selection}
+%\title{Process, Factors, Conditions and Guiding Principles: A Model of Software Library Adoption in %Industry}
 
 % \title{Guiding Principles for the Software Library Adoption Process: Perspectives from Industry}
 
 %\title{A Model of Software Library Adoption in the Industry}
-\title{Process, Factors, Conditions and Guiding Principles: A Model of Software Library Adoption in Industry}
 
 %\title{Promises and Perils of the Software Library Adoption Process}
 %\title{Processes and Principles Guiding Software Library Adoption in the Industry: Perspectives from Industrial Developers}
@@ -286,7 +296,7 @@ title={#2},fonttitle=\bfseries,#1}
 %% The abstract is a short summary of the work to be presented in the
 %% article.
 \begin{abstract}
-Modern day rapid software development is often facilitated by the reuse of third-party software libraries. Software library adoption includes the selection as well as the maintenance of a library. Various factors and conditions may influence the adoption of a software library in a company. However, while literature offers insights on what factors could influence the selection of library, we are not aware of any study that offers insights into the overall process and principles that companies follow to adopt a software library. In this paper, our research explores how the conditions and factors of the environment influence developer decisions in library selection. Using Straussian grounded theory, we conducted \numInterviews semi-structured interviews. The result is a theoretical framework of a library adoption model, six guiding principles of library adoption, and six recommendations for developers and organizations. Our work lays the groundwork for the development of a comparative library analysis tool to enable efficient decisions about libraries.
+Modern-day rapid software development is often facilitated by the reuse of third-party software libraries. Software library adoption includes the selection as well as the maintenance of a library. Various factors and conditions may influence the adoption of a software library in a company. However, while literature offers insights on what factors could influence the selection of a library, we are not aware of any study that offers insights into the overall process and {\principle} that companies follow to adopt a software library. In this paper, we explore how the conditions and factors of the environment influence developer decisions in library selection. Using Straussian grounded theory, we conducted \numInterviews semi-structured interviews. The result is a theoretical framework of a \model, six \principle\space of library adoption, and seven barriers faced by developers and organizations. Inspired by the model, we proposed and evaluated two conceptual library selection tools. Our work lays the groundwork for the development of an industry-grade comparative library analysis tool to enable efficient decisions about libraries.
 %consisting of 5 steps, 5 major information sources, 53 selection factors and conditions and 6 overarching guiding principles. The library adoption model can be used for the development of a comparative library analysis tool to enable faster and more accurate decisions among developers.
 \end{abstract}
 
@@ -294,20 +304,20 @@ Modern day rapid software development is often facilitated by the reuse of third
 %% The code below is generated by the tool at http://dl.acm.org/ccs.cfm.
 %% Please copy and paste the code instead of the example below.
 %%
-\begin{CCSXML}
-<ccs2012>
-   <concept>
-       <concept_id>10011007.10011006.10011072</concept_id>
-       <concept_desc>Software and its engineering~Software libraries and repositories</concept_desc>
-       <concept_significance>500</concept_significance>
-       </concept>
-   <concept>
-       <concept_id>10003120.10003130.10011762</concept_id>
-       <concept_desc>Human-centered computing~Empirical studies in collaborative and social computing</concept_desc>
-       <concept_significance>300</concept_significance>
-       </concept>
- </ccs2012>
-\end{CCSXML}
+% \begin{CCSXML}
+% <ccs2012>
+%    <concept>
+%        <concept_id>10011007.10011006.10011072</concept_id>
+%        <concept_desc>Software and its engineering~Software libraries and repositories</concept_desc>
+%        <concept_significance>500</concept_significance>
+%        </concept>
+%    <concept>
+%        <concept_id>10003120.10003130.10011762</concept_id>
+%        <concept_desc>Human-centered computing~Empirical studies in collaborative and social computing</concept_desc>
+%        <concept_significance>300</concept_significance>
+%        </concept>
+%  </ccs2012>
+% \end{CCSXML}
 
 \ccsdesc[500]{Software and its engineering~Software libraries and repositories}
 \ccsdesc[300]{Human-centered computing~Empirical studies in collaborative and social computing}
@@ -315,79 +325,117 @@ Modern day rapid software development is often facilitated by the reuse of third
 %%
 %% Keywords. The author(s) should pick words that accurately describe
 %% the work being presented. Separate the keywords with commas.
-\keywords{third-party, software library, adoption process, guiding principle, pattern, open source software, interview study, qualitative research} % AB: added last 2 terms as these were present in my recent ICSE paper, added OSS because we mention it a lot and most of my research has this tag, added pattern because we do use that format and that's another large community
+\keywords{third-party, software library, adoption process, decision pattern, open-source software, grounded theory, interview study, qualitative research} % AB: added last 2 terms as these were present in my recent ICSE paper, added OSS because we mention it a lot and most of my research has this tag, added pattern because we do use that format and that's another large community
 %%
 %% This command processes the author and affiliation and title
 %% information and builds the first part of the formatted document.
 \maketitle
-\balance
+%\balance
 \section{Introduction}
-In 2011, Marc Andersson famously noted that \textit{"Software is eating the world"} \cite{website:eat-world}. Indeed, software has now become the enabler of almost every tasks we do or services we offer/consume. With growing demands of tools and techniques, software companies seek to build and deploy their products quickly and efficiently. Modern day rapid software development is often facilitated by the reuse of third-party software libraries or APIs (Application Programming Interfaces). The libraries can be open source or proprietary. Nevertheless, software/IT companies benefit from the adoption of third-party software libraries and often prefer the reuse of a library over the of re-implementation of a feature from scratch~\cite{uddin2017opiner}. For example, according to a 2017 report by the European Commission, the use of open source software saves European companies approximately \euro456 billion per year through increased productivity, efficiency, and direct cost savings \cite{eu2017economic}. These advantages come from standardization and reductions in vulnerability, development time, and required expertise. However, such benefits do not always accrue; Spinellis outlines many potential concerns of relying on an open source library, among them: the project might not be maintained, the code may not be of high quality, the license may not allow the desired use, and the documentation may be poor \cite{spinellis2019select}.
+In 2011, Marc Andersson famously noted that \textit{"Software is eating the world"} \cite{website:eat-world}. Indeed, software has now become the enabler of almost every task we do or service we offer/consume. With growing demands for tools and techniques, software companies seek to build and deploy their products quickly and efficiently. Modern-day rapid software development is often facilitated by the reuse of third-party software libraries or APIs (Application Programming Interfaces). The libraries can be open-source or proprietary. Nevertheless, software/IT companies benefit from the adoption of third-party software libraries and often prefer the reuse of a library over the re-implementation of a feature from scratch~\cite{uddin2017opiner}. For example, according to a 2017 report by the European Commission, the use of open-source software saves European companies approximately \euro456 billion per year through increased productivity, efficiency, and direct cost savings \cite{eu2017economic}. These advantages come from standardization and reductions in vulnerability, development time, and required expertise. However, such benefits do not always accrue; Spinellis outlines many potential concerns of relying on an open-source library, among them: the project might not be maintained, the code may not be of high quality, the license may not allow the desired use, and the documentation may be poor \cite{spinellis2019select}.
 
 The process of selecting a library is not simple, as it requires balancing a number of considerations, both those inherent to the library itself and those relating to the context in which it will be used. Developers or the deciding team in a company must ask questions like whether the library will accommodate the company's expansion plans and what the full legal implications are of using the library (including potentially hidden obligations) 
-\cite{spinellis2019select,wolter:2022:open}. Factors such as the fit between functional capability of available software and the acceptance (or rejection) of the technology by peers may also influence the selection decision \cite{dishaw1998supporting,eckhardt2009influences}. % Dishaw: Fit is the matching of the capabilities of the tech- nology to the demands of the task.
+\cite{spinellis2019select,wolter:2022:open}. Factors such as the fit between the functional capability of available software and the acceptance (or rejection) of the technology by peers may also influence the selection decision \cite{dishaw1998supporting,eckhardt2009influences}. % Dishaw: Fit is the matching of the capabilities of the tech- nology to the demands of the task.
 
-While open source software represents a large proportion of the external libraries, companies also routinely use proprietary libraries \cite{harutyunyan:2018:understanding}. All of the considerations of open source software still apply: the company needs to consider if the library will continue to be developed, is a good fit for the task, and so on. Further, while the code for open source libraries is freely available, there may still be financial considerations such as switching costs, support, and access to extended (proprietary) features \cite{dahlander2006business}. Therefore, while certain factors may be of greater or lesser importance to a company, the possible considerations are not substantially different for proprietary and open source libraries. 
+While open-source software represents a large proportion of the external libraries, companies also routinely use proprietary libraries \cite{harutyunyan:2018:understanding}. All of the considerations of open source software still apply: the company needs to consider if the library will continue to be developed, is a good fit for the task, and so on. Further, while the code for open-source libraries is freely available, there may still be financial considerations such as switching costs, support, and access to extended (proprietary) features \cite{dahlander2006business}. Therefore, while certain factors may be of greater or lesser importance to a company, the possible considerations are not substantially different for proprietary and open-source libraries. 
 
 % Indeed, it is crucial to pick the right software library in a large-scale software system, given that the replacement of a library because a new library can induce breaking changes into the system that take significant time to address. At the same time, the adoption of a new software library can be a time consuming and resource intensive process in a large software company, e.g., legal team needs to check for compatible licenses, product team needs to determine the best candidate out of the available libraries, etc. It is thus important to understand the decision making processes software companies follow to select and adopt a new software library and the factors and principles they consider during the process. 
 
 The selection factors of software libraries have been the subject of several studies. In particular, technical criteria related to the selection of open source tools are studied and cataloged extensively \cite{wasserman2017osspal, li2022exploring, larios2020selecting, huang2018tell, wang2020difftech, wang2021difftech, uddin2017automatic, uddin2017opiner, de2018library, de2018empirical, el2020libcomp, yan2022concept, liu2021api, uddin2019understanding, larios2020selecting}. However, the adoption of a software library in industry can involve both the selection and the subsequent maintenance of the library. 
 % As such, software library adoption in the industry is a multi-faceted process that can encapsulate an end-to-end process, where a given step can be influenced by diverse factors and principles.  
-A holistic understanding of the adoption process is missing in the literature. 
+Whereas consumer and business buyer behavior models have been well-established in marketing theories for more than half-century \cite{kotler1965behavioral}, a holistic understanding of the adoption process is missing in the software engineering literature. Discovering a library consumer behavior model can open up significant new dimensions and opportunities in the library development, marketing, consumption, and overall API economy \cite{tan2016service}.
 
-In this paper, we conducted 24 semi-structured interviews of industrial developers to understand the adoption process of third-party software in a company. The outcome is a theoretical framework of software library adoption model that consists of a catalog of steps, conditions, factors, and principles related to software library adoption in the industry. By conditions, we mean environmental characteristics which are independent of the library under consideration. Factors refer to characteristics of the library itself. We answer three research questions to describe our derived software library adoption model. % (RQ).
+In this paper, we conducted 24 semi-structured interviews with industrial developers to understand the adoption process of software libraries in a company. We analyzed the interviews to understand why and how developers select and adopt third party software libraries, what challenges and barriers they face during their decision making process, and what tool support they need to support the address the challenges. Our study offers two major contributions to offer a theoretical and empirical framework around the selection process of third party software libraries: a model of software library selection and a suite of guidelines on tool needs that could support the adoption of the model in the industry. We answer the following two research questions (RQ).
 
-\nd\bf{RQ1: What are the major steps developers follow in the industry during their adoption of a software library?} We found that developers go through five iterative steps of search, compare, review, integrate and maintain for library adoption. \fig\ref{fig:adoption-process} shows how the five steps can support the selection and adoption process of software libraries. During this process, software developers/teams collect library related information from five major information sources (e.g. online forums, colleagues, etc.). To the best of our knowledge, ours is the first study that presents an end-to-end adoption process like \fig\ref{fig:adoption-process} (explained further in \sec\ref{sec:phases}).
-%\minaoar{should we also note that this adoption process is first in literature for software libraries? For RQ2 and RQ3, we compared with existing literature.}
+%\nd\bf{RQ1: Is there a model of software library adoption in the industry?}
+\input{tables/lib-research-contribution}
+\nd\bf{{RQ1. What are the factors, barriers, and decision patterns that are observed during the adoption third-party software libraries in an organization?}} Based on a grounded theory approach on the analysis of our interview data, we have derived a \model\space that can describe the process third-party library selection in the industry along the following dimensions: workflow/process, source, conditions, factors, barriers, and decision patterns. The model is very similar to the business buyer behavior model in marketing theories \cite{kotler2014principles} while the adoption process is similar to the consumer buying decision process. Our model derived 28 library selection factors (15 novel), 23 influencing conditions (14 novel), and 15 novel information sources for library selection. To our knowledge, this is the first time a library adoption model has been proposed that resembles well-established consumer marketing theories.
 \begin{figure}[h]
     \centering
     \includegraphics[scale=.7]{images/adoption-process.pdf}
     \caption{Software library adoption process}
     \label{fig:adoption-process}
 \end{figure}
-% As we understand the adoption process, we realized that there are several conditions and factors that can influence the adoption process. We thus sought to answer the following research question.
+We found that developers go through five iterative steps of search, compare, review, integrate, and maintain for library adoption. \fig\ref{fig:adoption-process} shows how the five steps can support the selection and adoption process of software libraries. To the best of our knowledge, ours is the first study that presents an end-to-end adoption process like \fig\ref{fig:adoption-process} (explained further in \sec\ref{sec:phases}).
 
-\nd\bf{RQ2: What conditions and technical factors influence the library adoption process?}
-We found that developers have to consider 23 types of conditions (e.g., environmental, organizational, etc.) and 28 types of factors (e.g., technical, commercial)  during the library adoption process. While 22 of these conditions and factors are previously reported in the literature  (e.g., popularity), 29 others were observed the first time in our study (e.g., benchmarking).
-% As developers follow the adoption process and consider the influential conditions and factors, we found that their final decisions on whether and how to adopt a library can be encoded into several guiding principles. As such, we sought to answer the final research question as follows. 
+We reported seven organizational (e.g., lack of library adoption policy), individual (e.g., lack of experience), and industry-wide problems (lack of library selection tool) that hinder the library adoption process. To our knowledge, no prior study reported these barriers.
 
-\nd\textbf{RQ3: What guiding principles do developers follow during the library adoption process?} We found that developers follow 6 guiding principles (e.g., maximize flexibility during adoption) to achieve the optimum benefits from libraries and manage the burdens associated with those libraries. To the best of our knowledge, ours is the first study that reports and catalogs the principles that could guide the adoption of software libraries.
+We found that developers follow six \principle\space (e.g., maximize flexibility during adoption) to achieve the optimum benefits from libraries and manage the burdens associated with those libraries. To the best of our knowledge, ours is the first study that reports and catalogs the \principle\space that define the developer behavior during the adoption of software libraries.
 
-Based on the derived library adoption model, we offer six recommendations that software companies and developers can follow to guide their library adoption process. 
+% \begin{itemize}[leftmargin=10pt]
+% \item 
 
-% To address this gap in the literature, we tried to discover the end to end library adoption process so that we could not only understand how developers select and maintain libraries, but also realize their core motivations that guides developer throughout their library adoption journey. In this study, we considered the process through the lens of consumer buyer behavior, where the product-specific factors determine what the consumer will select, in the context of consumer-specific concerns, or `influences' \cite{kotler2014principles}. By using this approach, we have sought to explain the complexity of the adoption of software libraries, a decision which has often been considered as primarily driven by technical considerations. Our work was driven by the following questions:
-% % In order to better understand the complete process by which library selection decisions are made, we posed the following questions:
-% \begin{itemize}
-% \item \textbf{RQ1}: What are the major steps developers follow during their adoption of a software library?
-% \item \textbf{RQ2}: What conditions and technical factors influence the library adoption process?
-% \item \textbf{RQ3}: What guiding principles do developers follow in library adoption?
+%     \item     
+%     \item 
+    
+%     \item 
 % \end{itemize}
 
 
-% \textbf{Summary of Contribution} 
-% Novel contribution: \newline
-% A. Library Adoption Process \newline
-% B. Library Adoption Guiding Principles
-% \todo{@Someone - spell out the contributions. Then make sure that they are reflected in the abstract.}
-% \@todo{Culminating in X recommendations for industry}
 
-\nd\bf{The Replication Package \cite{website:replication-package}} contains anonymized transcribed interviews, study protocol, codebook and scripts for the results.
-% Our replication package contains the interview script, invitation emails, consent form, REB approval, final codebook, assessment of grounded theory evaluation criteria, and an Appendix \cite{website:replication-package}. In order to preserve the anonymity of our participants and to adhere to our ethics approval, we do not share a list of interview participants or the interview transcripts. 
+\nd\bf{{RQ2. What tool supports are needed to guide developers during the adoption of third-party software libraries in an organization?}} Using the derived \model\space from RQ1, we conceptualized and evaluated a new library selection tool that can compare multiple libraries and generate a score for the better library based on the developers' priorities and conditions. We also explored whether large-language model-based chatbots can help developers in library selection. From the industry evaluation survey, we found that chatbots can only be used for initial information discovery but cannot be reliable for decision-making. In addition to our conceptual library selection tool, we offer seven recommendations that software companies and developers can follow to guide their library adoption process. 
+%\begin{itemize}[leftmargin=10pt]
+%    \item 
+%    \item 
+%\end{itemize}
+
+In Table \ref{tab:contribution-summary} we outline the major contributions of our research and summarize how the contributions advance the literature in third-party software library selection and adoption.
+% The outcome is a theoretical framework of software \model\space that consists of a catalog of processes, conditions, factors, sources, barriers, and {\principle} related to software library adoption in the industry. 
+% % By conditions, we mean environmental characteristics which are independent of the library under consideration. Factors refer to the characteristics of the library itself. 
+% In addition to deriving the model, we were also interested to conceptualize library selection tools to guide developers. With this objective, we formulated the following research questions:
 
 
 
-% The rest of this paper is organized as follows. First, we put the research in the context of related work. Next, we explain the methodology and the results. This is followed by a discussion and a consideration of the limitations of the research. Finally, we summarize the key findings.
+% \nd\bf{RQ1: What is the library adoption model and its dimensions?}
+% To explore this RQ, we further divided into six more sub-RQs.
+
+% \nd\bf{RQ1.1: What behavior model developers follow while adopting libraries?} We derived a \model\space that can describe all the dimensions of library selection. The model is very similar to the business buyer behavior model in marketing theories \cite{kotler2014principles} while the adoption process is similar to consumer buying decision process. To our knowledge, this is the first time a library adoption model has been proposed that resembles well-established consumer marketing theories.
+
+% \nd\bf{RQ1.2: What are the process developers follow in the industry during their adoption of a software library?}
+% We found that developers go through five iterative steps of search, compare, review, integrate and maintain for library adoption. \fig\ref{fig:adoption-process} shows how the five steps can support the selection and adoption process of software libraries. To the best of our knowledge, ours is the first study that presents an end-to-end adoption process like \fig\ref{fig:adoption-process} (explained further in \sec\ref{sec:phases}).
+
+% \nd\bf{RQ1.3: What are the major data sources developers use during their adoption decision of a software library?}
+% During this process, software developers/teams collect library related information from five major information sources (e.g. online forums, colleagues, etc.). 
+
+
+
+% \nd\bf{RQ1.4: What conditions influence the library adoption process?} We found that developers are influenced by 23 types of conditions (e.g., environmental, organizational, etc.) under 5 major categories (environmental, organizational, technological, team-specific, and individual).
+% We identified 14 new conditions (e.g., geographic, criticality of feature) for the first time in our study in addition to 9 existing conditions reported in the literature.
+
+% \nd\bf{RQ1.5: What library specific technical factors developers consider during the library adoption process?}
+% We found that developers consider overall 28 types of factors (under four categories of technical, commercial, maintenance and external factors) during the library adoption process. 
+% While 13 of these and factors are previously reported in the literature  (e.g., popularity), 15 others were observed the first time in our study (e.g., customer support, used by reputed organization).
+% % As developers follow the adoption process and consider the influential conditions and factors, we found that their final decisions on whether and how to adopt a library can be encoded into several guiding principles. As such, we sought to answer the final research question as follows. 
+
+% \nd\bf{RQ1.6: What challenges developers face while adopting software libraries} We reported 7 organizational (e.g., lack of library adoption policy), individual (e.g., lack of experience), and industry wide problems (lack of library selection tool) that hinders the library adoption process. To our knowledge, no prior study reported these challenges.
+
+% \nd\textbf{RQ1.7: What \principle\space do developers follow during the library adoption process?} We found that developers follow 6 \principle\space (e.g., maximize flexibility during adoption) to achieve the optimum benefits from libraries and manage the burdens associated with those libraries. To the best of our knowledge, ours is the first study that reports and catalogs the \principle\space that define the developer behavior during the adoption of software libraries.
+
+% After exploring RQ1, we were interested to apply the findings to guide developers in library selection process with the following research question:
+
+% \nd\bf{RQ2: What tools do developers wish for to support their library selection?}
+
+% Using the derived \model\space from RQ1, we conceptualized and evaluated a new library selection tool that can compare multiple libraries and generate a score for the better library based on the developers' priorities and conditions. We also explored whether large-language model-based chatbots can help developers in library selection. 
+% From the industry evaluation survey, we found that chatbots can only be used for initial information discovery but cannot be reliable for decision-making.
+
+% In addition to our conceptual library selection tool, we offer seven recommendations that software companies and developers can follow to guide their library adoption process. In Table \ref{tab:contribution-summary} we outline the major contributions of our research.
+
+
+
+
 
 
 
 \input{B.related-works.tex}
 \input{C.methodology.tex}
-\input{D.Framework.tex}
+\input{D.framework.tex}
 
 \input{E.results.tex}
-\input{F.discussion.tex}
-\input{G.conclusion.tex}
+\input{F.tool}
+\input{G.discussion.tex}
+\input{H.conclusion.tex}
 
+%\input{F.challenges}
 
 
 
@@ -396,15 +444,15 @@ Based on the derived library adoption model, we offer six recommendations that s
 %% (and NOT an unnumbered section). This ensures the proper
 %% identification of the section in the article metadata, and the
 %% consistent spelling of the heading.
-\begin{acks}
-\end{acks}
+% \begin{acks}
+% \end{acks}
 
 %%
 %% The next two lines define the bibliography style to be used, and
 %% the bibliography file.
+
 \bibliographystyle{ACM-Reference-Format}
 \bibliography{references}
-
 %%
 %% If your work has an appendix, this is the place to put it.
 %\appendix

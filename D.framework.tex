@@ -1,14 +1,46 @@
-\section{The Library Adoption Model}
-In this section, we describe a software library adoption model in the industry that we derived based on our interviews of 24 software practitioners from the industry. The model is composed of an adoption process, and a suite of conditions, factors, and guiding principles that influence the adoption process. 
+\section{A Model of Third-Party Software Library Adoption (RQ1)}
+We describe a software library adoption model in the industry that we derived based on our interviews with 24 software practitioners from the industry. Since developers are consumers of libraries and we outlined their behavior model during the library adoption process, we named the model \model.
+
+%The model is composed of five attributes of a suite of conditions, factors, information sources, challenges, and \principle\space that influence the lifecycle of library adoption. 
+
+% To explain the model, we divide RQ1 in 7 sub-RQs:
+
+% \nd\bf{RQ1.1:} What behavior model developers follow while adopting libraries?
+
+% \nd\bf{RQ1.2:} What are the process developers follow in the industry during their adoption of a software library?
+
+% \nd\bf{RQ1.3:} What are the major data sources developers use during their adoption decision of a software library?
+
+% \nd\bf{RQ1.4:} What conditions influence the library adoption process?
+
+% \nd\bf{RQ1.5:} What library specific technical factors developers consider during the library adoption process?
+
+% \nd\bf{RQ1.6:} What challenges developers face while adopting software libraries
+
+% \nd\textbf{RQ1.7:} What \principle\space do developers follow during the library adoption process?
+
+
 \begin{figure*}
     \centering
-    \includegraphics[scale=0.8  ]{images/Library-adoption-framework.v3.pdf}
-    \caption{Conceptual framework of the software library adoption model}
+    \includegraphics[scale=0.8  ]{images/Library-adoption-framework.v4.pdf}
+    \caption{Conceptual framework of the library consumer behavior model. Example concepts are shown in \textit{italic}.}
     \label{fig:framework}
 \end{figure*}
-\subsection{The Adoption Model \& the Process (RQ1)}\label{sec:rq1}
-\subsubsection{The Model}\label{sec:framework}
-At the center of the library adoption model resides the adoption process, which is used to select and adopt a software library. The process consists of a set of steps, each completed in order. The completion of the steps is supported by the consultation with different information sources. The process is influenced by a suite of conditions, factors, and guiding principles. Figure~\ref{fig:framework} visualizes the relationships between steps, conditions, factors, and the guiding principles. 
+
+\begin{figure*}
+    \centering
+    \includegraphics[scale=0.8  ]{images/Library-selection-process.pdf}
+    \caption{Steps and life cycle of library adoption process}
+    \label{fig:selection-process}
+\end{figure*}
+%\subsection{The Adoption Model and Dimensions}\label{sec:rq1}
+%\subsection{Library Consumer Behavior Model}\label{sec:framework}
+%\subsubsection{The Model} 
+
+The {\model} consists of three building blocks as shown in Figure \ref{fig:framework}, the external environments (i.e., external conditions and barriers), the internal context comprising barriers, conditions, processes, and decision patterns based on the organization, the development team, and even the individual developers, and finally, the development team's response (for considering specific library specific factors or information sources) influenced by the first two blocks (external and internal attributes). 
+At the center of the model resides the adoption process, which is used to select and adopt a software library. The process consists of a set of steps, each completed in order as shown in Figure \ref{fig:selection-process}. 
+
+% The completion of the steps is supported by consultation with different information sources. The process is influenced by a suite of conditions, factors, and \principle. Figure~\ref{fig:framework} visualizes the relationships between the selection process, conditions, factors, sources, and the \principle. 
 
 
 % We find that developers seek support for their evaluation from a variety of sources, which are included in the pattern as support. The categories of support are:
@@ -21,8 +53,8 @@ At the center of the library adoption model resides the adoption process, which 
 % \end{inparaenum} 
 % Support is detailed in section~\ref{sec:sources}.
 
-Under complex organizational context, developers tend to follow certain guiding principles (knowingly or unknowingly) to extract the right benefits and to tackle the disadvantages of the libraries throughout the whole adoption process. For example, on the basis of the guiding principles, they can skip or include certain steps such as \code{review} or \code{maintain} may be skipped under \code{Just Do It} principle. 
-Hence, guiding principles became the central theme of the library adoption process. The other aspects of the library adoption process are conditions, factors, and information sources.  
+Under complex organizational contexts, developers tend to follow certain {\principle} (knowingly or unknowingly) to extract the right benefits and to tackle the disadvantages of the libraries throughout the whole adoption process. For example, on the basis of the {\principle}, they can skip or include certain steps such as \code{review} or \code{maintain} may be skipped under \code{Just Do It} pattern. 
+Hence, {\principle} became the central theme of the library adoption process. The other aspects of the library adoption process are conditions, factors, and information sources.  
 
 % The software library adoption process has five major steps, during which factors are considered and information is sought. The steps are:
 % \begin{inparaenum}[(P1)] 
@@ -72,12 +104,12 @@ Hence, guiding principles became the central theme of the library adoption proce
 % While developers following on this principle can also ignore some library specific factors such as \code{license}, other developers would put serious emphasis on the same factor, if they are following \code{Ensure Compliance} principle. Based on the emphasis on the factors, their source of information also changes. For example, developers will have to consult with internal organizational sources if they care for \code{license} factor.
 
 As we worked with the data, we had some insights. First, library adoption is not a one-off selection event, rather it has a complete process involving selection, integration, and post-integration maintenance. Secondly, in addition to all the benefits libraries offer, they also have disadvantages, such as legal risks with licenses and life-long upgrades of library versions. The benefits are seen in the following quote:
-\qi{I have used many third-party libraries because they are ready to use tools, right? If I don't use them, I need to spend lots of time to develop my own libraries to do like sometimes very simple stuff. I think like it seems simple but when you get to the bottom of it, it will take time to do some let's say preprocessing or processing on the data that you have. But by using the third-party libraries you can just import it and use the functions and it's very easy to use and very fast and user friendly.}{P11}
+\qi{I have used many third-party libraries because they are ready-to-use tools, right? If I don't use them, I need to spend lots of time developing my own libraries to do like sometimes very simple stuff. I think it seems simple but when you get to the bottom of it, it will take time to do some let's say preprocessing or processing on the data that you have. But by using the third-party libraries you can just import it and use the functions and it's very easy to use and very fast and user friendly.}{P11}
 
 Evidence of disadvantage is illustrated by the following quote:
- \qi{There can be flaw within the library that could introduce security flaw and attacks to your system. It is always, always risky when you build a core component on top of a library and the library is not getting developed.}{P15} 
+ \qi{There can be flaws within the library that could introduce security flaws and attacks to your system. It is always, always risky when you build a core component on top of a library and the library is not getting developed.}{P15} 
  
-
+In the following subsections, we present the major attributes of the {\model} process, sources, conditions, factors, barriers, and {\principle} which have 18, 17, 23, 28, 7, and 6 concepts respectively. For the sake of simplicity, we provide the taxonomy chart of concepts for the major attributes (process, sources, conditions, and factors) which have more than ten concepts. For the barriers and {\principle} attributes, we provide the description of all the internal concepts since they are lower in number. 
 
 %\todo{@Minaoar - where are these described in more detail? Please add a reference.}
 

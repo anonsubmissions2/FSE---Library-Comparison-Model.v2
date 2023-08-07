@@ -1,10 +1,11 @@
 \begin{practice}{6}{Maintain Continuous Stability}
 \actor{Developers, DevOps}
-\condition{Some software applications are developed and maintained for long term. A third-party library used in such a product can have bugs or vulnerabilities that need to be fixed. Sometimes, the contributors of the library may not continue to fix bugs or improve with new features. Sometimes libraries may not have backwards compatibility and when developers upgrade, their existing system can break.}
-\concern{How will developers ensure that a library is well maintained in foreseeable future and that they can keep using the library without breaking their application?}
-\solution{Use a library with good history of maintenance and prepare to continuously upgrade the library in future}
-\consideration{Selected libraries should be actively maintained by contributors, supported by reputed organizations, and have larger community.}
+\condition{Long term application. Critical library update (vulnerability fix) or unmaintained library.}
+\concern{How to ensure a library is maintained in foreseeable future and developers can use smoothly?}
+\solution{Library with good history of maintenance and prepare to continuously upgrade the library in future}
+\consideration{Actively maintained library, supported by reputed organizations, and has larger community.}
 \steps{Analyze the maintenance and issue history of the library to assess the active development practices or the library. Establish a process for software bill of materials to document all third-party library dependencies and their upgrade plan in conjunction with DevOps teams. Look into source code commit and issue history from source repository and download usage trend from package repository.}
+\consequence{Requires dedicated resource upgradation for smooth operation. Otherwise can break system.}
 \example{When we integrated the updated version our whole interface broke. And we had to change a lot of code, all the interceptors, interfaces, everything\ldots This maintenance is quite hard. It's actually a full time work to always keep updated, to always stay updated.}{P14}
 \end{practice}
 
